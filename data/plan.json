@@ -1,0 +1,1503 @@
+{
+  "1": [
+    {
+      "skill": "Listening",
+      "type": "overview",
+      "title": "Lesson: IELTS Listening test format: 4 parts, 40 questions, ~30 minutes (+10 min transfer on paper / 2 min check on computer)",
+      "url": "https://ieltsliz.com/ielts-listening/",
+      "videoUrl": "https://www.youtube.com/watch?v=q8qmJeBxk4Q",
+      "promptId": null,
+      "instructions": "Watch first. Note the number of questions, timing and question types.",
+      "timer": null,
+      "itemNum": 1
+    },
+    {
+      "skill": "Listening",
+      "type": "lesson",
+      "title": "Lesson: How to answer Form/note completion questions",
+      "url": "https://ieltsliz.com/ielts-listening-predicting-answers/",
+      "videoUrl": "https://www.youtube.com/watch?v=_6jgygopp40",
+      "promptId": null,
+      "instructions": "Watch the strategy explanation and note the key tips.",
+      "timer": null,
+      "itemNum": 2
+    },
+    {
+      "skill": "Listening",
+      "type": "practice",
+      "title": "Practice: Form/note completion",
+      "url": "https://ieltsliz.com/form-completion-ielts-listening-practice/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Do the practice questions, check your answers, and write down why each wrong answer was wrong.",
+      "timer": null,
+      "itemNum": 3
+    },
+    {
+      "skill": "Listening",
+      "type": "lesson",
+      "title": "Lesson: How to answer Multiple choice questions",
+      "url": "https://ieltsliz.com/ielts-listening-multiple-choice-essential-tips/",
+      "videoUrl": "https://www.youtube.com/watch?v=AkW0IeF46cA",
+      "promptId": null,
+      "instructions": "Watch the strategy explanation and note the key tips.",
+      "timer": null,
+      "itemNum": 4
+    },
+    {
+      "skill": "Listening",
+      "type": "practice",
+      "title": "Practice: Multiple choice",
+      "url": "https://ieltsliz.com/listening-multiple-choice-practice-moles/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Do the practice questions, check your answers, and write down why each wrong answer was wrong.",
+      "timer": null,
+      "itemNum": 5
+    },
+    {
+      "skill": "Writing",
+      "type": "overview",
+      "title": "Lesson: IELTS Academic Writing test format: Task 1 (150 words, ~20 min) + Task 2 (250 words, ~40 min), 60 minutes total; Task 2 counts double",
+      "url": "https://ieltsliz.com/ielts-writing-task-1-lessons-and-tips/",
+      "videoUrl": "https://www.youtube.com/watch?v=oTe_2hmSHvw",
+      "promptId": null,
+      "instructions": "Watch first. Note the number of questions, timing and question types.",
+      "timer": null,
+      "itemNum": 6
+    },
+    {
+      "skill": "Writing",
+      "type": "lesson",
+      "title": "Lesson: How to write a Task 1 line graph",
+      "url": "https://ieltsliz.com/how-to-ielts-line-graph/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Watch and note the structure (intro, overview/position, body paragraphs).",
+      "timer": null,
+      "itemNum": 7
+    },
+    {
+      "skill": "Writing",
+      "type": "sample",
+      "title": "Sample answer: Task 1 line graph",
+      "url": "https://ieltsliz.com/ielts-writing-task-1-line-graph-model-score-9/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Read a Band 8+ sample. Highlight useful phrases and notice how it is organised.",
+      "timer": null,
+      "itemNum": 8
+    },
+    {
+      "skill": "Writing",
+      "type": "ai",
+      "title": "AI practice: Task 1 line graph",
+      "url": null,
+      "videoUrl": null,
+      "promptId": "W-T1-LINE",
+      "instructions": "Copy the prompt, paste it into any AI chatbot (ChatGPT, Claude, Gemini), attach the chart image, write your answer, get your band and feedback, then rewrite it.",
+      "timer": null,
+      "itemNum": 9
+    }
+  ],
+  "2": [
+    {
+      "skill": "Reading",
+      "type": "overview",
+      "title": "Lesson: IELTS Academic Reading test format: 3 passages, 40 questions, 60 minutes, no extra transfer time",
+      "url": "https://ieltsliz.com/ielts-reading-lessons-information-and-tips/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Watch first. Note the number of questions, timing and question types.",
+      "timer": null,
+      "itemNum": 1
+    },
+    {
+      "skill": "Reading",
+      "type": "lesson",
+      "title": "Lesson: How to answer True/False/Not Given questions",
+      "url": "https://ieltsliz.com/ielts-true-false-not-given-essential-tips/",
+      "videoUrl": "https://www.youtube.com/watch?v=WYl9PX7Ua_Q",
+      "promptId": null,
+      "instructions": "Watch the strategy explanation and note the key tips.",
+      "timer": null,
+      "itemNum": 2
+    },
+    {
+      "skill": "Reading",
+      "type": "practice",
+      "title": "Practice: True/False/Not Given",
+      "url": "https://ieltsliz.com/true-false-not-given-ielts-reading-practice/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Do the practice questions, check your answers, and write down why each wrong answer was wrong.",
+      "timer": null,
+      "itemNum": 3
+    },
+    {
+      "skill": "Reading",
+      "type": "lesson",
+      "title": "Lesson: How to answer Matching headings questions",
+      "url": "https://ieltsliz.com/ielts-reading-matching-headings/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Watch the strategy explanation and note the key tips.",
+      "timer": null,
+      "itemNum": 4
+    },
+    {
+      "skill": "Reading",
+      "type": "practice",
+      "title": "Practice: Matching headings",
+      "url": "https://ieltsliz.com/matching-headings-question-ielts-reading/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Do the practice questions, check your answers, and write down why each wrong answer was wrong.",
+      "timer": null,
+      "itemNum": 5
+    },
+    {
+      "skill": "Speaking",
+      "type": "overview",
+      "title": "Lesson: IELTS Speaking test format: 3 parts, 11–14 minutes, face-to-face with an examiner",
+      "url": "https://ieltsliz.com/ielts-speaking-practice-test-video/",
+      "videoUrl": "https://www.youtube.com/watch?v=n5ohxW5lTIs",
+      "promptId": null,
+      "instructions": "Watch first. Note the number of questions, timing and question types.",
+      "timer": null,
+      "itemNum": 6
+    },
+    {
+      "skill": "Speaking",
+      "type": "lesson",
+      "title": "Lesson: How to answer Speaking Part 1",
+      "url": "https://ieltsliz.com/questions-ielts-speaking-part-1/",
+      "videoUrl": "https://www.youtube.com/watch?v=E0jCDsWoM1A",
+      "promptId": null,
+      "instructions": "Watch and note useful answer structures and phrases.",
+      "timer": null,
+      "itemNum": 7
+    },
+    {
+      "skill": "Speaking",
+      "type": "ai",
+      "title": "AI practice: Speaking Part 1",
+      "url": null,
+      "videoUrl": null,
+      "promptId": "S-P1",
+      "instructions": "Copy the prompt into any AI chatbot. Use voice mode if available so you practise speaking out loud (and get pronunciation feedback).",
+      "timer": null,
+      "itemNum": 8
+    }
+  ],
+  "3": [
+    {
+      "skill": "Listening",
+      "type": "lesson",
+      "title": "Lesson: How to answer Sentence completion questions",
+      "url": "https://ieltsliz.com/ielts-listening-practice-gap-fill-question/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Watch the strategy explanation and note the key tips.",
+      "timer": null,
+      "itemNum": 1
+    },
+    {
+      "skill": "Listening",
+      "type": "practice",
+      "title": "Practice: Sentence completion",
+      "url": "https://ieltsliz.com/ielts-listening-gap-fill-practice-lesson/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Do the practice questions, check your answers, and write down why each wrong answer was wrong.",
+      "timer": null,
+      "itemNum": 2
+    },
+    {
+      "skill": "Listening",
+      "type": "lesson",
+      "title": "Lesson: How to answer Map/plan labelling questions",
+      "url": "https://ieltsliz.com/ielts-map-listening-practice/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Watch the strategy explanation and note the key tips.",
+      "timer": null,
+      "itemNum": 3
+    },
+    {
+      "skill": "Listening",
+      "type": "practice",
+      "title": "Practice: Map/plan labelling",
+      "url": "https://ieltsliz.com/map-completion-question-ielts-listening/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Do the practice questions, check your answers, and write down why each wrong answer was wrong.",
+      "timer": null,
+      "itemNum": 4
+    },
+    {
+      "skill": "Writing",
+      "type": "lesson",
+      "title": "Lesson: Writing Task 2 overview: the 5 essay types and a basic essay structure",
+      "url": "https://ieltsliz.com/types-of-ielts-essays/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Watch/read and note the 5 essay types and the 4-paragraph structure.",
+      "timer": null,
+      "itemNum": 5
+    },
+    {
+      "skill": "Writing",
+      "type": "lesson",
+      "title": "Lesson: How to write a Task 2 opinion essay",
+      "url": "https://ieltsliz.com/how-many-paragraphs-for-an-ielts-essay/",
+      "videoUrl": "https://www.youtube.com/watch?v=y9Gn6aVRqaI",
+      "promptId": null,
+      "instructions": "Watch and note the structure (intro, overview/position, body paragraphs).",
+      "timer": null,
+      "itemNum": 6
+    },
+    {
+      "skill": "Writing",
+      "type": "sample",
+      "title": "Sample answer: Task 2 opinion essay",
+      "url": "https://ieltsliz.com/ielts-agree-disagree-essay-sample-answer/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Read a Band 8+ sample. Highlight useful phrases and notice how it is organised.",
+      "timer": null,
+      "itemNum": 7
+    },
+    {
+      "skill": "Writing",
+      "type": "ai",
+      "title": "AI practice: Task 2 opinion essay",
+      "url": null,
+      "videoUrl": null,
+      "promptId": "W-T2-OPINION",
+      "instructions": "Copy the prompt, paste it into any AI chatbot (ChatGPT, Claude, Gemini), write your answer, get your band and feedback, then rewrite it.",
+      "timer": null,
+      "itemNum": 8
+    }
+  ],
+  "4": [
+    {
+      "skill": "Reading",
+      "type": "lesson",
+      "title": "Lesson: How to answer Yes/No/Not Given questions",
+      "url": "https://ieltsliz.com/ielts-yes-no-not-given-practice/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Watch the strategy explanation and note the key tips.",
+      "timer": null,
+      "itemNum": 1
+    },
+    {
+      "skill": "Reading",
+      "type": "practice",
+      "title": "Practice: Yes/No/Not Given",
+      "url": "https://ieltsliz.com/ielts-yes-no-not-given-practice/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Do the practice questions, check your answers, and write down why each wrong answer was wrong.",
+      "timer": null,
+      "itemNum": 2
+    },
+    {
+      "skill": "Reading",
+      "type": "lesson",
+      "title": "Lesson: How to answer Summary completion questions",
+      "url": "https://ieltsliz.com/food-ielts-summary-reading-practice/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Watch the strategy explanation and note the key tips.",
+      "timer": null,
+      "itemNum": 3
+    },
+    {
+      "skill": "Reading",
+      "type": "practice",
+      "title": "Practice: Summary completion",
+      "url": "https://ieltsliz.com/ielts-reading-summary/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Do the practice questions, check your answers, and write down why each wrong answer was wrong.",
+      "timer": null,
+      "itemNum": 4
+    },
+    {
+      "skill": "Speaking",
+      "type": "lesson",
+      "title": "Lesson: How to answer Speaking Part 2 (cue card)",
+      "url": "https://ieltsliz.com/ielts-speaking-part-2-model-answer/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Watch and note useful answer structures and phrases.",
+      "timer": null,
+      "itemNum": 5
+    },
+    {
+      "skill": "Speaking",
+      "type": "ai",
+      "title": "AI practice: Speaking Part 2 (cue card)",
+      "url": null,
+      "videoUrl": null,
+      "promptId": "S-P2",
+      "instructions": "Copy the prompt into any AI chatbot. Use voice mode if available so you practise speaking out loud (and get pronunciation feedback).",
+      "timer": null,
+      "itemNum": 6
+    }
+  ],
+  "5": [
+    {
+      "skill": "Listening",
+      "type": "lesson",
+      "title": "Lesson: How to answer Summary completion questions",
+      "url": "https://ieltsliz.com/listening-practice-summary-completion-questions/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Watch the strategy explanation and note the key tips.",
+      "timer": null,
+      "itemNum": 1
+    },
+    {
+      "skill": "Listening",
+      "type": "practice",
+      "title": "Practice: Summary completion",
+      "url": "https://ieltsliz.com/ielts-listening-practice-sports-festival/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Do the practice questions, check your answers, and write down why each wrong answer was wrong.",
+      "timer": null,
+      "itemNum": 2
+    },
+    {
+      "skill": "Listening",
+      "type": "lesson",
+      "title": "Lesson: How to answer Table completion questions",
+      "url": "https://ieltsliz.com/ielts-listening-problems-with-numbers/",
+      "videoUrl": "https://www.youtube.com/watch?v=HYp08TMG5uw",
+      "promptId": null,
+      "instructions": "Watch the strategy explanation and note the key tips.",
+      "timer": null,
+      "itemNum": 3
+    },
+    {
+      "skill": "Listening",
+      "type": "practice",
+      "title": "Practice: Table completion",
+      "url": "https://ieltsliz.com/ielts-listening-practice-tables/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Do the practice questions, check your answers, and write down why each wrong answer was wrong.",
+      "timer": null,
+      "itemNum": 4
+    },
+    {
+      "skill": "Writing",
+      "type": "lesson",
+      "title": "Lesson: How to write a Task 1 bar chart",
+      "url": "https://ieltsliz.com/ielts-bar-chart-tips-and-techniques-for-a-high-score/",
+      "videoUrl": "https://www.youtube.com/watch?v=E3U1Y1jgGls",
+      "promptId": null,
+      "instructions": "Watch and note the structure (intro, overview/position, body paragraphs).",
+      "timer": null,
+      "itemNum": 5
+    },
+    {
+      "skill": "Writing",
+      "type": "sample",
+      "title": "Sample answer: Task 1 bar chart",
+      "url": "https://ieltsliz.com/ielts-model-bar-chart-band-score-9/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Read a Band 8+ sample. Highlight useful phrases and notice how it is organised.",
+      "timer": null,
+      "itemNum": 6
+    },
+    {
+      "skill": "Writing",
+      "type": "ai",
+      "title": "AI practice: Task 1 bar chart",
+      "url": null,
+      "videoUrl": null,
+      "promptId": "W-T1-BAR",
+      "instructions": "Copy the prompt, paste it into any AI chatbot (ChatGPT, Claude, Gemini), attach the chart image, write your answer, get your band and feedback, then rewrite it.",
+      "timer": null,
+      "itemNum": 7
+    }
+  ],
+  "6": [
+    {
+      "skill": "Reading",
+      "type": "lesson",
+      "title": "Lesson: How to answer Matching paragraph information questions",
+      "url": "https://ieltsliz.com/matching-paragraph-information-ielts-reading/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Watch the strategy explanation and note the key tips.",
+      "timer": null,
+      "itemNum": 1
+    },
+    {
+      "skill": "Reading",
+      "type": "practice",
+      "title": "Practice: Matching paragraph information",
+      "url": "https://ieltsliz.com/ielts-reading-practice-ebola/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Do the practice questions, check your answers, and write down why each wrong answer was wrong.",
+      "timer": null,
+      "itemNum": 2
+    },
+    {
+      "skill": "Reading",
+      "type": "lesson",
+      "title": "Lesson: How to answer Multiple choice questions",
+      "url": "https://ieltsliz.com/ielts-reading-multiple-choice/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Watch the strategy explanation and note the key tips.",
+      "timer": null,
+      "itemNum": 3
+    },
+    {
+      "skill": "Reading",
+      "type": "practice",
+      "title": "Practice: Multiple choice",
+      "url": "https://ieltsliz.com/ielts-reading-multiple-choice-question/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Do the practice questions, check your answers, and write down why each wrong answer was wrong.",
+      "timer": null,
+      "itemNum": 4
+    },
+    {
+      "skill": "Speaking",
+      "type": "lesson",
+      "title": "Lesson: How to answer Speaking Part 3",
+      "url": "https://ieltsliz.com/common-mistake-in-speaking-part-3/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Watch and note useful answer structures and phrases.",
+      "timer": null,
+      "itemNum": 5
+    },
+    {
+      "skill": "Speaking",
+      "type": "ai",
+      "title": "AI practice: Speaking Part 3",
+      "url": null,
+      "videoUrl": null,
+      "promptId": "S-P3",
+      "instructions": "Copy the prompt into any AI chatbot. Use voice mode if available so you practise speaking out loud (and get pronunciation feedback).",
+      "timer": null,
+      "itemNum": 6
+    }
+  ],
+  "7": [
+    {
+      "skill": "Review",
+      "type": "review",
+      "title": "Review: Listening & Reading weak spots",
+      "url": null,
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Look at your mistakes from Days 1–6. Pick your 2 lowest-scoring question types and redo those exercises without looking at your old answers.",
+      "timer": null,
+      "itemNum": 1
+    },
+    {
+      "skill": "Review",
+      "type": "review",
+      "title": "Review: Writing rewrite",
+      "url": null,
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Go back to the AI chat with your lowest Writing band this week. Rewrite the answer from scratch and ask the AI to grade it again.",
+      "timer": null,
+      "itemNum": 2
+    }
+  ],
+  "8": [
+    {
+      "skill": "Listening",
+      "type": "lesson",
+      "title": "Lesson: How to answer Diagram/flow-chart labelling questions",
+      "url": "https://ieltsliz.com/ielts-listening-diagrams-practice-tips/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Watch the strategy explanation and note the key tips.",
+      "timer": null,
+      "itemNum": 1
+    },
+    {
+      "skill": "Listening",
+      "type": "practice",
+      "title": "Practice: Diagram/flow-chart labelling",
+      "url": "https://ieltsliz.com/ielts-listening-practice-the-eiffel-tower/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Do the practice questions, check your answers, and write down why each wrong answer was wrong.",
+      "timer": null,
+      "itemNum": 2
+    },
+    {
+      "skill": "Listening",
+      "type": "lesson",
+      "title": "Lesson: How to answer Short answer questions",
+      "url": "https://ieltsliz.com/ielts-listening-practice-lesson/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Watch the strategy explanation and note the key tips.",
+      "timer": null,
+      "itemNum": 3
+    },
+    {
+      "skill": "Listening",
+      "type": "practice",
+      "title": "Practice: Short answer",
+      "url": "https://ieltsliz.com/ielts-listening-practice-nadiya-hussain/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Do the practice questions, check your answers, and write down why each wrong answer was wrong.",
+      "timer": null,
+      "itemNum": 4
+    },
+    {
+      "skill": "Writing",
+      "type": "lesson",
+      "title": "Lesson: How to write a Task 1 pie chart",
+      "url": "https://ieltsliz.com/how-to-ielts-pie-chart-lesson/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Watch and note the structure (intro, overview/position, body paragraphs).",
+      "timer": null,
+      "itemNum": 5
+    },
+    {
+      "skill": "Writing",
+      "type": "sample",
+      "title": "Sample answer: Task 1 pie chart",
+      "url": "https://ieltsliz.com/ielts-pie-chart-task-1-model-score-9/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Read a Band 8+ sample. Highlight useful phrases and notice how it is organised.",
+      "timer": null,
+      "itemNum": 6
+    },
+    {
+      "skill": "Writing",
+      "type": "ai",
+      "title": "AI practice: Task 1 pie chart",
+      "url": null,
+      "videoUrl": null,
+      "promptId": "W-T1-PIE",
+      "instructions": "Copy the prompt, paste it into any AI chatbot (ChatGPT, Claude, Gemini), attach the chart image, write your answer, get your band and feedback, then rewrite it.",
+      "timer": null,
+      "itemNum": 7
+    }
+  ],
+  "9": [
+    {
+      "skill": "Reading",
+      "type": "lesson",
+      "title": "Lesson: How to answer Categorisation (matching features) questions",
+      "url": "https://ieltsliz.com/categorisation-practice-for-ielts-reading/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Watch the strategy explanation and note the key tips.",
+      "timer": null,
+      "itemNum": 1
+    },
+    {
+      "skill": "Reading",
+      "type": "practice",
+      "title": "Practice: Categorisation (matching features)",
+      "url": "https://ieltsliz.com/categorisation-practice-for-ielts-reading/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Do the practice questions, check your answers, and write down why each wrong answer was wrong.",
+      "timer": null,
+      "itemNum": 2
+    },
+    {
+      "skill": "Reading",
+      "type": "lesson",
+      "title": "Lesson: How to answer Matching sentence endings questions",
+      "url": "https://ieltsliz.com/matching-sentence-endings-ielts-reading-practice/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Watch the strategy explanation and note the key tips.",
+      "timer": null,
+      "itemNum": 3
+    },
+    {
+      "skill": "Reading",
+      "type": "practice",
+      "title": "Practice: Matching sentence endings",
+      "url": "https://ieltsliz.com/crime-and-punishment-ielts-reading-exercise/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Do the practice questions, check your answers, and write down why each wrong answer was wrong.",
+      "timer": null,
+      "itemNum": 4
+    },
+    {
+      "skill": "Speaking",
+      "type": "lesson",
+      "title": "Lesson: How to answer Speaking Parts 1 + 2",
+      "url": "https://ieltsliz.com/ielts-speaking-tips-length-of-answer/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Watch and note useful answer structures and phrases.",
+      "timer": null,
+      "itemNum": 5
+    },
+    {
+      "skill": "Speaking",
+      "type": "ai",
+      "title": "AI practice: Speaking Parts 1 + 2",
+      "url": null,
+      "videoUrl": null,
+      "promptId": "S-P1P2",
+      "instructions": "Copy the prompt into any AI chatbot. Use voice mode if available so you practise speaking out loud (and get pronunciation feedback).",
+      "timer": null,
+      "itemNum": 6
+    }
+  ],
+  "10": [
+    {
+      "skill": "Listening",
+      "type": "practice",
+      "title": "Practice: Section 1 skills: spelling names",
+      "url": "https://ieltsliz.com/listening-practice-for-english-names/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Section 1 often tests spelling of names. Do the exercise and check every letter.",
+      "timer": null,
+      "itemNum": 1
+    },
+    {
+      "skill": "Writing",
+      "type": "lesson",
+      "title": "Lesson: How to write a Task 2 discussion essay",
+      "url": "https://ieltsliz.com/ielts-writing-task-2-should-i-give-my-opinion/",
+      "videoUrl": "https://www.youtube.com/watch?v=SpAIW4p8wkw",
+      "promptId": null,
+      "instructions": "Watch and note the structure (intro, overview/position, body paragraphs).",
+      "timer": null,
+      "itemNum": 2
+    },
+    {
+      "skill": "Writing",
+      "type": "sample",
+      "title": "Sample answer: Task 2 discussion essay",
+      "url": "https://ieltsliz.com/ielts-discussion-essay-model-answer/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Read a Band 8+ sample. Highlight useful phrases and notice how it is organised.",
+      "timer": null,
+      "itemNum": 3
+    },
+    {
+      "skill": "Writing",
+      "type": "ai",
+      "title": "AI practice: Task 2 discussion essay",
+      "url": null,
+      "videoUrl": null,
+      "promptId": "W-T2-DISCUSSION",
+      "instructions": "Copy the prompt, paste it into any AI chatbot (ChatGPT, Claude, Gemini), write your answer, get your band and feedback, then rewrite it.",
+      "timer": null,
+      "itemNum": 4
+    }
+  ],
+  "11": [
+    {
+      "skill": "Reading",
+      "type": "lesson",
+      "title": "Lesson: How to answer Sentence completion questions",
+      "url": "https://ieltsliz.com/sentence-completion-questions-in-ielts-reading/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Watch the strategy explanation and note the key tips.",
+      "timer": null,
+      "itemNum": 1
+    },
+    {
+      "skill": "Reading",
+      "type": "practice",
+      "title": "Practice: Sentence completion",
+      "url": "https://ieltsliz.com/ielts-reading-practice-sentence-completion/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Do the practice questions, check your answers, and write down why each wrong answer was wrong.",
+      "timer": null,
+      "itemNum": 2
+    },
+    {
+      "skill": "Reading",
+      "type": "lesson",
+      "title": "Lesson: How to answer Diagram labelling questions",
+      "url": "https://ieltsliz.com/reading-practice-about-ants/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Watch the strategy explanation and note the key tips.",
+      "timer": null,
+      "itemNum": 3
+    },
+    {
+      "skill": "Reading",
+      "type": "practice",
+      "title": "Practice: Diagram labelling",
+      "url": "https://ieltsliz.com/reading-practice-about-ants/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Do the practice questions, check your answers, and write down why each wrong answer was wrong.",
+      "timer": null,
+      "itemNum": 4
+    },
+    {
+      "skill": "Speaking",
+      "type": "lesson",
+      "title": "Lesson: How to answer Speaking Part 3 (new topics)",
+      "url": "https://ieltsliz.com/ielts-speaking-part-3-technology-questions-and-model-answer/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Watch and note useful answer structures and phrases.",
+      "timer": null,
+      "itemNum": 5
+    },
+    {
+      "skill": "Speaking",
+      "type": "ai",
+      "title": "AI practice: Speaking Part 3 (new topics)",
+      "url": null,
+      "videoUrl": null,
+      "promptId": "S-P3-B",
+      "instructions": "Copy the prompt into any AI chatbot. Use voice mode if available so you practise speaking out loud (and get pronunciation feedback).",
+      "timer": null,
+      "itemNum": 6
+    }
+  ],
+  "12": [
+    {
+      "skill": "Listening",
+      "type": "practice",
+      "title": "Practice: Section 2 style: Museum visit",
+      "url": "https://ieltsliz.com/ielts-listening-list-selection/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Section 2 is a monologue on a social topic. Do the exercise and check your answers.",
+      "timer": null,
+      "itemNum": 1
+    },
+    {
+      "skill": "Writing",
+      "type": "lesson",
+      "title": "Lesson: How to write a Task 1 table",
+      "url": "https://ieltsliz.com/vocabulary-for-accurate-data/",
+      "videoUrl": "https://www.youtube.com/watch?v=MYjUEFeQv7w",
+      "promptId": null,
+      "instructions": "Watch and note the structure (intro, overview/position, body paragraphs).",
+      "timer": null,
+      "itemNum": 2
+    },
+    {
+      "skill": "Writing",
+      "type": "sample",
+      "title": "Sample answer: Task 1 table",
+      "url": "https://ieltsliz.com/ielts-table-band-9-model-answer/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Read a Band 8+ sample. Highlight useful phrases and notice how it is organised.",
+      "timer": null,
+      "itemNum": 3
+    },
+    {
+      "skill": "Writing",
+      "type": "ai",
+      "title": "AI practice: Task 1 table",
+      "url": null,
+      "videoUrl": null,
+      "promptId": "W-T1-TABLE",
+      "instructions": "Copy the prompt, paste it into any AI chatbot (ChatGPT, Claude, Gemini), attach the chart image, write your answer, get your band and feedback, then rewrite it.",
+      "timer": null,
+      "itemNum": 4
+    }
+  ],
+  "13": [
+    {
+      "skill": "Reading",
+      "type": "lesson",
+      "title": "Lesson: How to answer Short answer questions",
+      "url": "https://ieltsliz.com/ielts-short-answer-questions-reading-practice/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Watch the strategy explanation and note the key tips.",
+      "timer": null,
+      "itemNum": 1
+    },
+    {
+      "skill": "Reading",
+      "type": "practice",
+      "title": "Practice: Short answer",
+      "url": "https://ieltsliz.com/ielts-short-answer-questions-reading-practice/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Do the practice questions, check your answers, and write down why each wrong answer was wrong.",
+      "timer": null,
+      "itemNum": 2
+    },
+    {
+      "skill": "Reading",
+      "type": "lesson",
+      "title": "Lesson: How to answer Choosing a title questions",
+      "url": "https://ieltsliz.com/choosing-a-title-ielts-reading/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Watch the strategy explanation and note the key tips.",
+      "timer": null,
+      "itemNum": 3
+    },
+    {
+      "skill": "Reading",
+      "type": "practice",
+      "title": "Practice: Choosing a title",
+      "url": "https://ieltsliz.com/ielts-reading-choosing-a-title/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Do the practice questions, check your answers, and write down why each wrong answer was wrong.",
+      "timer": null,
+      "itemNum": 4
+    },
+    {
+      "skill": "Speaking",
+      "type": "lesson",
+      "title": "Lesson: How to answer Speaking Full test",
+      "url": "https://ieltsliz.com/andrews-tips-ielts-speaking-band-score-9/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Watch and note useful answer structures and phrases.",
+      "timer": null,
+      "itemNum": 5
+    },
+    {
+      "skill": "Speaking",
+      "type": "ai",
+      "title": "AI practice: Speaking Full test",
+      "url": null,
+      "videoUrl": null,
+      "promptId": "S-FULL-1",
+      "instructions": "Copy the prompt into any AI chatbot. Use voice mode if available so you practise speaking out loud (and get pronunciation feedback).",
+      "timer": null,
+      "itemNum": 6
+    }
+  ],
+  "14": [
+    {
+      "skill": "Review",
+      "type": "review",
+      "title": "Review: weak question types",
+      "url": null,
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Redo the exercises for your 2 weakest Listening or Reading types from Week 2.",
+      "timer": null,
+      "itemNum": 1
+    },
+    {
+      "skill": "Writing",
+      "type": "lesson",
+      "title": "Lesson: How to write a Task 2 advantages/disadvantages essay",
+      "url": "https://ieltsliz.com/ielts-writing-task-2-essay-planning-tips/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Watch and note the structure (intro, overview/position, body paragraphs).",
+      "timer": null,
+      "itemNum": 2
+    },
+    {
+      "skill": "Writing",
+      "type": "sample",
+      "title": "Sample answer: Task 2 advantages/disadvantages essay",
+      "url": "https://ieltsliz.com/do-the-advantages-outweigh-the-disadvantages/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Read a Band 8+ sample. Highlight useful phrases and notice how it is organised.",
+      "timer": null,
+      "itemNum": 3
+    },
+    {
+      "skill": "Writing",
+      "type": "ai",
+      "title": "AI practice: Task 2 advantages/disadvantages essay",
+      "url": null,
+      "videoUrl": null,
+      "promptId": "W-T2-ADVDIS",
+      "instructions": "Copy the prompt, paste it into any AI chatbot (ChatGPT, Claude, Gemini), write your answer, get your band and feedback, then rewrite it.",
+      "timer": null,
+      "itemNum": 4
+    }
+  ],
+  "15": [
+    {
+      "skill": "Listening",
+      "type": "practice",
+      "title": "Practice: Section 3 style: My University",
+      "url": "https://ieltsliz.com/listening-practice-my-university/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Section 3 is an academic conversation. Play the audio once without pausing.",
+      "timer": 10,
+      "itemNum": 1
+    },
+    {
+      "skill": "Writing",
+      "type": "lesson",
+      "title": "Lesson: How to write a Task 1 process diagram",
+      "url": "https://ieltsliz.com/ielts-diagram-paragraphs-and-organisation/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Watch and note the structure (intro, overview/position, body paragraphs).",
+      "timer": null,
+      "itemNum": 2
+    },
+    {
+      "skill": "Writing",
+      "type": "sample",
+      "title": "Sample answer: Task 1 process diagram",
+      "url": "https://ieltsliz.com/ielts-diagram/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Read a Band 8+ sample. Highlight useful phrases and notice how it is organised.",
+      "timer": null,
+      "itemNum": 3
+    },
+    {
+      "skill": "Writing",
+      "type": "ai",
+      "title": "AI practice: Task 1 process diagram",
+      "url": null,
+      "videoUrl": null,
+      "promptId": "W-T1-PROCESS",
+      "instructions": "Set a 20-minute timer before you start writing. Copy the prompt, paste it into any AI chatbot (ChatGPT, Claude, Gemini), attach the chart image, write your answer, get your band and feedback, then rewrite it.",
+      "timer": 20,
+      "itemNum": 4
+    }
+  ],
+  "16": [
+    {
+      "skill": "Reading",
+      "type": "practice",
+      "title": "Practice: Timed passage: Hobbies for the Elderly",
+      "url": "https://ieltsliz.com/ielts-reading-matching-paragraph-information/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Do the passage under time pressure.",
+      "timer": 20,
+      "itemNum": 1
+    },
+    {
+      "skill": "Speaking",
+      "type": "lesson",
+      "title": "Lesson: How to answer Speaking Part 2 (new topic)",
+      "url": "https://ieltsliz.com/ielts-speaking-part-2-will-i-get-a-low-score-if-i-speak-for-less-than-2-mins/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Watch and note useful answer structures and phrases.",
+      "timer": null,
+      "itemNum": 2
+    },
+    {
+      "skill": "Speaking",
+      "type": "ai",
+      "title": "AI practice: Speaking Part 2 (new topic)",
+      "url": null,
+      "videoUrl": null,
+      "promptId": "S-P2-B",
+      "instructions": "Use a timer to keep each part within the real time limits. Copy the prompt into any AI chatbot. Use voice mode if available so you practise speaking out loud (and get pronunciation feedback).",
+      "timer": 4,
+      "itemNum": 3
+    }
+  ],
+  "17": [
+    {
+      "skill": "Listening",
+      "type": "practice",
+      "title": "Practice: Section 4 practice with tips",
+      "url": "https://ieltsliz.com/ielts-listening-section-4-practice/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Section 4 is an academic lecture. Play the audio once without pausing.",
+      "timer": 10,
+      "itemNum": 1
+    },
+    {
+      "skill": "Writing",
+      "type": "lesson",
+      "title": "Lesson: How to write a Task 2 problem/solution essay",
+      "url": "https://ieltsliz.com/how-to-put-examples-in-your-essay/",
+      "videoUrl": "https://www.youtube.com/watch?v=suu0KfL7jzs",
+      "promptId": null,
+      "instructions": "Watch and note the structure (intro, overview/position, body paragraphs).",
+      "timer": null,
+      "itemNum": 2
+    },
+    {
+      "skill": "Writing",
+      "type": "sample",
+      "title": "Sample answer: Task 2 problem/solution essay",
+      "url": "https://ieltsliz.com/ielts-solution-essay-band-9-model-answer/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Read a Band 8+ sample. Highlight useful phrases and notice how it is organised.",
+      "timer": null,
+      "itemNum": 3
+    },
+    {
+      "skill": "Writing",
+      "type": "ai",
+      "title": "AI practice: Task 2 problem/solution essay",
+      "url": null,
+      "videoUrl": null,
+      "promptId": "W-T2-PROBSOL",
+      "instructions": "Set a 40-minute timer before you start writing. Copy the prompt, paste it into any AI chatbot (ChatGPT, Claude, Gemini), write your answer, get your band and feedback, then rewrite it.",
+      "timer": 40,
+      "itemNum": 4
+    }
+  ],
+  "18": [
+    {
+      "skill": "Reading",
+      "type": "practice",
+      "title": "Practice: Timed passage: Pangolins",
+      "url": "https://ieltsliz.com/ielts-matching-headings/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Do the passage under time pressure.",
+      "timer": 20,
+      "itemNum": 1
+    },
+    {
+      "skill": "Speaking",
+      "type": "lesson",
+      "title": "Lesson: How to answer Speaking Part 3 (environment)",
+      "url": "https://ieltsliz.com/ielts-speaking-part-3-environment/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Watch and note useful answer structures and phrases.",
+      "timer": null,
+      "itemNum": 2
+    },
+    {
+      "skill": "Speaking",
+      "type": "ai",
+      "title": "AI practice: Speaking Part 3 (environment)",
+      "url": null,
+      "videoUrl": null,
+      "promptId": "S-P3-C",
+      "instructions": "Use a timer to keep each part within the real time limits. Copy the prompt into any AI chatbot. Use voice mode if available so you practise speaking out loud (and get pronunciation feedback).",
+      "timer": 5,
+      "itemNum": 3
+    }
+  ],
+  "19": [
+    {
+      "skill": "Listening",
+      "type": "practice",
+      "title": "Practice: Timed exercise: Turtles",
+      "url": "https://ieltsliz.com/ielts-multiple-choice-listening-turtles/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Play the audio once without pausing.",
+      "timer": 10,
+      "itemNum": 1
+    },
+    {
+      "skill": "Writing",
+      "type": "lesson",
+      "title": "Lesson: How to write a Task 1 map",
+      "url": "https://ieltsliz.com/ielts-map-comparison/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Watch and note the structure (intro, overview/position, body paragraphs).",
+      "timer": null,
+      "itemNum": 2
+    },
+    {
+      "skill": "Writing",
+      "type": "sample",
+      "title": "Sample answer: Task 1 map",
+      "url": "https://ieltsliz.com/ielts-map-model-answer/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Read a Band 8+ sample. Highlight useful phrases and notice how it is organised.",
+      "timer": null,
+      "itemNum": 3
+    },
+    {
+      "skill": "Writing",
+      "type": "ai",
+      "title": "AI practice: Task 1 map",
+      "url": null,
+      "videoUrl": null,
+      "promptId": "W-T1-MAP",
+      "instructions": "Set a 20-minute timer before you start writing. Copy the prompt, paste it into any AI chatbot (ChatGPT, Claude, Gemini), attach the chart image, write your answer, get your band and feedback, then rewrite it.",
+      "timer": 20,
+      "itemNum": 4
+    }
+  ],
+  "20": [
+    {
+      "skill": "Reading",
+      "type": "practice",
+      "title": "Practice: Timed passage: Online translation",
+      "url": "https://ieltsliz.com/ielts-reading-using-online-translations-for-medical-purposes/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Do the passage under time pressure.",
+      "timer": 20,
+      "itemNum": 1
+    },
+    {
+      "skill": "Speaking",
+      "type": "lesson",
+      "title": "Lesson: How to answer Speaking Full test (2)",
+      "url": "https://ieltsliz.com/why-the-ielts-speaking-examiner-stops-your-answer/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Watch and note useful answer structures and phrases.",
+      "timer": null,
+      "itemNum": 2
+    },
+    {
+      "skill": "Speaking",
+      "type": "ai",
+      "title": "AI practice: Speaking Full test (2)",
+      "url": null,
+      "videoUrl": null,
+      "promptId": "S-FULL-2",
+      "instructions": "Use a timer to keep each part within the real time limits. Copy the prompt into any AI chatbot. Use voice mode if available so you practise speaking out loud (and get pronunciation feedback).",
+      "timer": 14,
+      "itemNum": 3
+    }
+  ],
+  "21": [
+    {
+      "skill": "Review",
+      "type": "review",
+      "title": "Review: weak question types",
+      "url": null,
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Redo the exercises for your 2 weakest types from Week 3.",
+      "timer": null,
+      "itemNum": 1
+    },
+    {
+      "skill": "Writing",
+      "type": "lesson",
+      "title": "Lesson: How to write a Task 2 two-part question essay",
+      "url": "https://ieltsliz.com/ielts-two-question-essay-feedback/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Watch and note the structure (intro, overview/position, body paragraphs).",
+      "timer": null,
+      "itemNum": 2
+    },
+    {
+      "skill": "Writing",
+      "type": "sample",
+      "title": "Sample answer: Task 2 two-part question essay",
+      "url": "https://ieltsliz.com/positive-or-negative-development-ielts-model-essay/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Read a Band 8+ sample. Highlight useful phrases and notice how it is organised.",
+      "timer": null,
+      "itemNum": 3
+    },
+    {
+      "skill": "Writing",
+      "type": "ai",
+      "title": "AI practice: Task 2 two-part question essay",
+      "url": null,
+      "videoUrl": null,
+      "promptId": "W-T2-TWOPART",
+      "instructions": "Set a 40-minute timer before you start writing. Copy the prompt, paste it into any AI chatbot (ChatGPT, Claude, Gemini), write your answer, get your band and feedback, then rewrite it.",
+      "timer": 40,
+      "itemNum": 4
+    }
+  ],
+  "22": [
+    {
+      "skill": "Listening",
+      "type": "practice",
+      "title": "Practice: Official full Listening test (familiarisation test)",
+      "url": "https://demo-ielts.inspera.com/player/?assessmentRunId=131012334&context=exam#/section/128121996/question/128121965/scorableItem/1",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Exam conditions: play the audio once, no pausing. Then 10 minutes to transfer answers (paper) or 2 minutes to check (computer). Answer key: https://assets.ctfassets.net/unrdeg6se4ke/3FAYhbYOQElb7L6r4Rv8DR/8331f2b5f2d50b7489b4c14affb75544/IELTS_familiarisation_test_Listening_answers.pdf (Official IELTS material, not IELTS Liz.)",
+      "timer": 30,
+      "itemNum": 1
+    },
+    {
+      "skill": "Writing",
+      "type": "lesson",
+      "title": "Lesson: How to write a Task 1 mixed charts",
+      "url": "https://ieltsliz.com/ielts-charts-writing-task-1/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Watch and note the structure (intro, overview/position, body paragraphs).",
+      "timer": null,
+      "itemNum": 2
+    },
+    {
+      "skill": "Writing",
+      "type": "sample",
+      "title": "Sample answer: Task 1 mixed charts",
+      "url": "https://ieltsliz.com/ielts-line-graph-and-bar-chart-model-answer-band-9/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Read a Band 8+ sample. Highlight useful phrases and notice how it is organised.",
+      "timer": null,
+      "itemNum": 3
+    },
+    {
+      "skill": "Writing",
+      "type": "ai",
+      "title": "AI practice: Task 1 mixed charts",
+      "url": null,
+      "videoUrl": null,
+      "promptId": "W-T1-MIXED",
+      "instructions": "Set a 20-minute timer before you start writing. Copy the prompt, paste it into any AI chatbot (ChatGPT, Claude, Gemini), attach the chart image, write your answer, get your band and feedback, then rewrite it.",
+      "timer": 20,
+      "itemNum": 4
+    }
+  ],
+  "23": [
+    {
+      "skill": "Reading",
+      "type": "practice",
+      "title": "Practice: Official full Academic Reading test (familiarisation test)",
+      "url": "https://demo-ielts.inspera.com/player/?assessmentRunId=131013388&context=exam#/section/128121930/question/128121896/scorableItem/1",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Exam conditions: one timer for all 3 passages, about 20 minutes per passage, no dictionary. Answer key: https://assets.ctfassets.net/unrdeg6se4ke/2ggjbjdFDSU7xXTp7Eqxjp/ef3ce074fbb5d9e47db8ee4b3ad45cb0/IELTS_familiarisation_test_Reading_answers.pdf (Official IELTS material, not IELTS Liz.)",
+      "timer": 60,
+      "itemNum": 1
+    },
+    {
+      "skill": "Speaking",
+      "type": "ai",
+      "title": "AI practice: Speaking Full mock test",
+      "url": null,
+      "videoUrl": null,
+      "promptId": "S-MOCK",
+      "instructions": "Use a timer to keep each part within the real time limits. Copy the prompt into any AI chatbot. Use voice mode if available so you practise speaking out loud (and get pronunciation feedback).",
+      "timer": 14,
+      "itemNum": 2
+    }
+  ],
+  "24": [
+    {
+      "skill": "Listening",
+      "type": "practice",
+      "title": "Practice: Official Listening sample tasks (British Council)",
+      "url": "https://takeielts.britishcouncil.org/prepare/ielts-free-practice-mock-tests/academic/listening",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Do all the sample tasks on the page in one sitting, audio once only, then check the answer keys and transcripts. (Official IELTS material, not IELTS Liz.)",
+      "timer": 20,
+      "itemNum": 1
+    },
+    {
+      "skill": "Writing",
+      "type": "sample",
+      "title": "Sample answer: Task 2 opinion essay (timed)",
+      "url": "https://ieltsliz.com/ielts-writing-task-2-model-essay-2/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Read a Band 8+ sample. Highlight useful phrases and notice how it is organised.",
+      "timer": null,
+      "itemNum": 2
+    },
+    {
+      "skill": "Writing",
+      "type": "ai",
+      "title": "AI practice: Task 2 opinion essay (timed)",
+      "url": null,
+      "videoUrl": null,
+      "promptId": "W-T2-TIMED",
+      "instructions": "Set a 40-minute timer before you start writing. Copy the prompt, paste it into any AI chatbot (ChatGPT, Claude, Gemini), write your answer, get your band and feedback, then rewrite it.",
+      "timer": 40,
+      "itemNum": 3
+    }
+  ],
+  "25": [
+    {
+      "skill": "Reading",
+      "type": "practice",
+      "title": "Practice: Official Academic Reading sample tasks (British Council)",
+      "url": "https://takeielts.britishcouncil.org/prepare/ielts-free-practice-mock-tests/academic/reading",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Do all the sample tasks on the page in one sitting, then check the answer keys. (Official IELTS material, not IELTS Liz.)",
+      "timer": 40,
+      "itemNum": 1
+    },
+    {
+      "skill": "Speaking",
+      "type": "ai",
+      "title": "AI practice: Speaking Full mock test",
+      "url": null,
+      "videoUrl": null,
+      "promptId": "S-MOCK",
+      "instructions": "Use a timer to keep each part within the real time limits. Copy the prompt into any AI chatbot. Use voice mode if available so you practise speaking out loud (and get pronunciation feedback).",
+      "timer": 14,
+      "itemNum": 2
+    }
+  ],
+  "26": [
+    {
+      "skill": "Writing",
+      "type": "sample",
+      "title": "Sample answer: Full Writing test (Tasks 1 + 2)",
+      "url": "https://ieltsliz.com/ielts-model-answer-bar-chart-october-2018/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Read a Band 8+ sample. Highlight useful phrases and notice how it is organised.",
+      "timer": null,
+      "itemNum": 1
+    },
+    {
+      "skill": "Writing",
+      "type": "ai",
+      "title": "AI practice: Full Writing test (Tasks 1 + 2)",
+      "url": null,
+      "videoUrl": null,
+      "promptId": "W-FULL-1",
+      "instructions": "Set a 60-minute timer before you start writing. Copy the prompt, paste it into any AI chatbot (ChatGPT, Claude, Gemini), attach the chart image, write your answer, get your band and feedback, then rewrite it.",
+      "timer": 60,
+      "itemNum": 2
+    },
+    {
+      "skill": "Listening",
+      "type": "practice",
+      "title": "Practice: Official Listening practice test (IDP)",
+      "url": "https://ielts.idp.com/prepare/all-test-types/listening/practice-test",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Pick a Listening test on the page you haven't done yet. Exam conditions: play the audio once, no pausing. Then 10 minutes to transfer answers (paper) or 2 minutes to check (computer). (Official IELTS material, not IELTS Liz.)",
+      "timer": 30,
+      "itemNum": 3
+    }
+  ],
+  "27": [
+    {
+      "skill": "Reading",
+      "type": "practice",
+      "title": "Practice: Official Reading practice test (IDP)",
+      "url": "https://ielts.idp.com/prepare/all-test-types/reading/practice-test",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Pick an Academic Reading test on the page you haven't done yet. Exam conditions: one timer for all 3 passages, about 20 minutes per passage, no dictionary. (Official IELTS material, not IELTS Liz.)",
+      "timer": 60,
+      "itemNum": 1
+    },
+    {
+      "skill": "Speaking",
+      "type": "ai",
+      "title": "AI practice: Speaking Full mock test",
+      "url": null,
+      "videoUrl": null,
+      "promptId": "S-MOCK",
+      "instructions": "Use a timer to keep each part within the real time limits. Copy the prompt into any AI chatbot. Use voice mode if available so you practise speaking out loud (and get pronunciation feedback).",
+      "timer": 14,
+      "itemNum": 2
+    }
+  ],
+  "28": [
+    {
+      "skill": "Listening",
+      "type": "practice",
+      "title": "Practice: Mock exam: Listening (IDP)",
+      "url": "https://ielts.idp.com/prepare/all-test-types/listening/practice-test",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Pick another Listening test you haven't done yet. Full exam conditions. Do Reading straight after with a short break. (Official IELTS material, not IELTS Liz.)",
+      "timer": 30,
+      "itemNum": 1
+    },
+    {
+      "skill": "Reading",
+      "type": "practice",
+      "title": "Practice: Mock exam: Reading (IDP)",
+      "url": "https://ielts.idp.com/prepare/all-test-types/reading/practice-test",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Pick another Academic Reading test you haven't done yet. Full exam conditions. (Official IELTS material, not IELTS Liz.)",
+      "timer": 60,
+      "itemNum": 2
+    }
+  ],
+  "29": [
+    {
+      "skill": "Writing",
+      "type": "sample",
+      "title": "Sample answer: Mock exam: Writing",
+      "url": "https://ieltsliz.com/ielts-essay-question-answer-june-2018/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Read a Band 8+ sample. Highlight useful phrases and notice how it is organised.",
+      "timer": null,
+      "itemNum": 1
+    },
+    {
+      "skill": "Writing",
+      "type": "ai",
+      "title": "AI practice: Mock exam: Writing",
+      "url": null,
+      "videoUrl": null,
+      "promptId": "W-FULL-2",
+      "instructions": "Set a 60-minute timer before you start writing. Copy the prompt, paste it into any AI chatbot (ChatGPT, Claude, Gemini), attach the chart image, write your answer, get your band and feedback, then rewrite it.",
+      "timer": 60,
+      "itemNum": 2
+    },
+    {
+      "skill": "Speaking",
+      "type": "ai",
+      "title": "AI practice: Speaking Full mock test",
+      "url": null,
+      "videoUrl": null,
+      "promptId": "S-MOCK",
+      "instructions": "Use a timer to keep each part within the real time limits. Copy the prompt into any AI chatbot. Use voice mode if available so you practise speaking out loud (and get pronunciation feedback).",
+      "timer": 14,
+      "itemNum": 3
+    }
+  ],
+  "30": [
+    {
+      "skill": "Review",
+      "type": "review",
+      "title": "Final review: weakest types",
+      "url": null,
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "List your 3 weakest question types from the whole plan and redo those exercises.",
+      "timer": null,
+      "itemNum": 1
+    },
+    {
+      "skill": "Review",
+      "type": "lesson",
+      "title": "Lesson: IELTS test-day tips and what to expect",
+      "url": "https://ieltsliz.com/ielts-exam-tips-on-the-day/",
+      "videoUrl": null,
+      "promptId": null,
+      "instructions": "Read/watch and prepare your documents, route and timing for test day.",
+      "timer": null,
+      "itemNum": 2
+    }
+  ]
+}

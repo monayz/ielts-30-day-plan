@@ -1,0 +1,4 @@
+.DS_Store
+data/IELTS_30_Day_Plan.backup-*.xlsx
+__pycache__/
+*.pyc

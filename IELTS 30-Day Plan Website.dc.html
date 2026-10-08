@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Nunito:wght@400;600;700;800&amp;display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,500,0..1,0&amp;display=block"><style>body{margin:0;font-family:Nunito,system-ui,sans-serif}a{color:#C8437A}a:hover{color:#A8335F}button{font-family:inherit}</style></helmet>
+<div style="min-height:100vh;background:{{ t.bg }};color:{{ t.ink }};font-family:Nunito,system-ui,sans-serif;display:flex;flex-direction:column;transition:background .3s">
+
+  <header style="position:sticky;top:0;z-index:20;background:{{ t.headerBg }};backdrop-filter:blur(12px);border-bottom:1px solid {{ t.line }}">
+    <div style="max-width:1160px;margin:0 auto;padding:10px clamp(20px,4vw,40px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 24px;min-height:52px">
+      <button onClick="{{ goHome }}" style="display:flex;align-items:center;gap:10px;border:0;background:transparent;color:{{ t.ink }};cursor:pointer;padding:0">
+        <span style="width:36px;height:36px;border-radius:12px;background:{{ t.primary }};color:{{ t.onPrimary }};display:grid;place-items:center;font-family:'DM Serif Display',serif;font-size:17px">30</span>
+        <span style="font-size:16px;font-weight:800">30 Days IELTS Practice for Shodi</span>
+      </button>
+      <nav style="display:flex;flex-wrap:wrap;align-items:center;gap:4px">
+        <sc-for list="{{ navItems }}" as="n" hint-placeholder-count="4">
+          <button onClick="{{ n.go }}" style="min-height:40px;padding:0 14px;border-radius:12px;border:0;background:{{ n.bg }};color:{{ n.color }};font-size:15px;font-weight:800;cursor:pointer" style-hover="background:{{ t.primarySoft }}">{{ n.label }}</button>
+        </sc-for>
+        <button onClick="{{ toggleTheme }}" aria-label="Toggle dark mode" style="margin-left:6px;width:40px;height:40px;border-radius:12px;border:1px solid {{ t.line }};background:{{ t.surface }};color:{{ t.muted }};display:grid;place-items:center;cursor:pointer"><span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1">{{ themeIcon }}</span></button>
+      </nav>
+    </div>
+  </header>
+
+  <main style="flex:1">
+
+    <sc-if value="{{ !dataReady }}" hint-placeholder-val="{{ false }}">
+      <section style="max-width:640px;margin:0 auto;padding:clamp(60px,10vw,120px) clamp(20px,4vw,40px);display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center">
+        <sc-if value="{{ dataError }}" hint-placeholder-val="{{ false }}">
+          <span style="font-family:'Material Symbols Rounded';font-size:40px;line-height:1;color:{{ t.danger }}">error</span>
+          <div style="margin:0;font-family:'DM Serif Display',serif;font-weight:400;font-size:28px;line-height:1.1">Couldn't load your plan</div>
+          <div style="font-size:15px;line-height:1.55;color:{{ t.muted }};max-width:440px">{{ dataError }} — make sure data/plan.json and data/prompts.json are next to this page, and that you're opening it through a local server rather than double-clicking the file.</div>
+        </sc-if>
+        <sc-if value="{{ !dataError }}" hint-placeholder-val="{{ true }}">
+          <span style="font-family:'Material Symbols Rounded';font-size:40px;line-height:1;color:{{ t.primary }}">hourglass_top</span>
+          <div style="font-size:16px;font-weight:700;color:{{ t.muted }}">Loading your plan…</div>
+        </sc-if>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+      <section style="max-width:1160px;margin:0 auto;padding:clamp(48px,8vw,96px) clamp(20px,4vw,40px) clamp(48px,6vw,80px);display:flex;flex-wrap:wrap;align-items:center;gap:48px">
+        <div style="flex:1 1 440px;display:flex;flex-direction:column;gap:22px">
+          <div style="align-self:flex-start;padding:6px 14px;border-radius:999px;background:{{ t.primarySoft }};color:{{ t.primary }};font-size:13px;font-weight:800">Free · IELTS Academic</div>
+          <h1 style="margin:0;font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(42px,6.2vw,72px);line-height:1.02;letter-spacing:-.01em;text-wrap:balance">30 days IELTS practice<br><span style="font-style: italic; color: rgb(200, 67, 122);">for Shodi</span></h1>
+          <p style="margin:0;font-size:clamp(17px,1.6vw,19px);line-height:1.6;color:{{ t.muted }};max-width:540px;text-wrap:pretty">Each day tells you exactly what to study, which free resource to open, and how to practise it with a prompt you paste into any chatbot to get graded.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:12px">
+            <button onClick="{{ goNext }}" style="min-height:54px;padding:0 26px;border:0;border-radius:16px;background:{{ t.primary }};color:{{ t.onPrimary }};font-size:17px;font-weight:800;display:flex;align-items:center;gap:8px;cursor:pointer;box-shadow:0 10px 24px {{ t.glow }}"><span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;font-variation-settings:'FILL' 1">favorite</span>{{ ctaLabel }}<span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1">arrow_forward</span></button>
+            <button onClick="{{ goPlan }}" style="min-height:54px;padding:0 22px;border:1.5px solid {{ t.line }};border-radius:16px;background:{{ t.surface }};color:{{ t.ink }};font-size:17px;font-weight:800;cursor:pointer">See the 30-day plan</button>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px;max-width:440px">
+            <div style="flex:1;height:8px;border-radius:99px;background:{{ t.primarySoft }};overflow:hidden"><div style="height:100%;width:{{ overallPct }}%;background:{{ t.primary }};border-radius:99px;transition:width .4s"></div></div>
+            <div style="font-size:14px;font-weight:800;color:{{ t.muted }};white-space:nowrap">{{ completedCount }} of 30 days complete</div>
+          </div>
+        </div>
+        <div style="flex:1 1 340px;max-width:460px;background:{{ t.surface }};border:1px solid {{ t.line }};border-radius:28px;padding:24px;display:flex;flex-direction:column;gap:16px;box-shadow:0 24px 60px {{ t.shadow }}">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+            <div><div style="font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:{{ t.primary }}">Up next</div><div style="font-family:'DM Serif Display',serif;font-size:34px;line-height:1.1">Day {{ nextDay }}</div></div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end">
+              <sc-for list="{{ nextSkills }}" as="k" hint-placeholder-count="2">
+                <span style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px 4px 7px;border-radius:999px;background:{{ k.tint }};color:{{ k.color }};font-size:12px;font-weight:800"><span style="font-family:'Material Symbols Rounded';font-size:15px;line-height:1;font-variation-settings:'FILL' 1">{{ k.icon }}</span>{{ k.name }}</span>
+              </sc-for>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:2px">
+            <sc-for list="{{ nextSteps }}" as="s" hint-placeholder-count="3">
+              <div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-top:1px solid {{ t.line }}">
+                <span style="width:34px;height:34px;flex:none;border-radius:11px;background:{{ s.tint }};color:{{ s.color }};display:grid;place-items:center"><span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">{{ s.icon }}</span></span>
+                <div style="min-width:0"><div style="font-size:12px;font-weight:800;color:{{ s.color }}">{{ s.typeLabel }}</div><div style="font-size:15px;font-weight:700;line-height:1.3">{{ s.title }}</div></div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </section>
+
+      <section style="background:{{ t.band }};border-top:1px solid {{ t.line }};border-bottom:1px solid {{ t.line }}">
+        <div style="max-width:1160px;margin:0 auto;padding:clamp(48px,7vw,88px) clamp(20px,4vw,40px);display:flex;flex-direction:column;gap:32px">
+          <h2 style="margin:0;font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(32px,4vw,44px);line-height:1.1">How it works</h2>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px">
+            <div style="background:{{ t.surface }};border:1px solid {{ t.line }};border-radius:24px;padding:26px;display:flex;flex-direction:column;gap:12px">
+              <div style="display:flex;align-items:center;justify-content:space-between"><span style="width:48px;height:48px;border-radius:16px;background:{{ sk.Listening.tint }};color:{{ sk.Listening.color }};display:grid;place-items:center"><span style="font-family:'Material Symbols Rounded';font-size:24px;line-height:1">school</span></span><span style="font-family:'DM Serif Display',serif;font-size:40px;line-height:1;color:{{ t.line }}">1</span></div>
+              <div style="font-size:19px;font-weight:800">Learn the question type</div>
+              <div style="font-size:15px;line-height:1.55;color:{{ t.muted }}">Open a short free lesson that shows you how to answer it.</div>
+            </div>
+            <div style="background:{{ t.surface }};border:1px solid {{ t.line }};border-radius:24px;padding:26px;display:flex;flex-direction:column;gap:12px">
+              <div style="display:flex;align-items:center;justify-content:space-between"><span style="width:48px;height:48px;border-radius:16px;background:{{ sk.Reading.tint }};color:{{ sk.Reading.color }};display:grid;place-items:center"><span style="font-family:'Material Symbols Rounded';font-size:24px;line-height:1">edit_note</span></span><span style="font-family:'DM Serif Display',serif;font-size:40px;line-height:1;color:{{ t.line }}">2</span></div>
+              <div style="font-size:19px;font-weight:800">Practise</div>
+              <div style="font-size:15px;line-height:1.55;color:{{ t.muted }}">Try real practice questions, some with a timer.</div>
+            </div>
+            <div style="background:{{ t.surface }};border:1px solid {{ t.line }};border-radius:24px;padding:26px;display:flex;flex-direction:column;gap:12px">
+              <div style="display:flex;align-items:center;justify-content:space-between"><span style="width:48px;height:48px;border-radius:16px;background:{{ sk.Writing.tint }};color:{{ sk.Writing.color }};display:grid;place-items:center"><span style="font-family:'Material Symbols Rounded';font-size:24px;line-height:1">auto_awesome</span></span><span style="font-family:'DM Serif Display',serif;font-size:40px;line-height:1;color:{{ t.line }}">3</span></div>
+              <div style="font-size:19px;font-weight:800">Get AI feedback</div>
+              <div style="font-size:15px;line-height:1.55;color:{{ t.muted }}">Copy our prompt into ChatGPT, Claude or Gemini, get your band, then rewrite.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style="max-width:1160px;margin:0 auto;padding:clamp(48px,7vw,88px) clamp(20px,4vw,40px);display:flex;flex-direction:column;gap:28px">
+        <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px">
+          <h2 style="margin:0;font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(32px,4vw,44px);line-height:1.1">Four weeks</h2>
+          <button onClick="{{ goPlan }}" style="border:0;background:transparent;color:{{ t.primary }};font-size:16px;font-weight:800;display:flex;align-items:center;gap:4px;cursor:pointer;min-height:44px">Open the full plan<span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1">arrow_forward</span></button>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px">
+          <sc-for list="{{ weeks }}" as="w" hint-placeholder-count="4">
+            <button onClick="{{ goPlan }}" style="text-align:left;background:{{ w.cardBg }};border:1px solid {{ t.line }};border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:10px;color:{{ w.cardInk }};cursor:pointer">
+              <span style="font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:{{ w.eyebrow }}">Week {{ w.n }} · Days {{ w.range }}</span>
+              <span style="font-family:'DM Serif Display',serif;font-size:24px;line-height:1.15">{{ w.label }}</span>
+              <span style="margin-top:auto;display:flex;align-items:center;gap:10px;width:100%"><span style="flex:1;height:6px;border-radius:99px;background:{{ w.track }};overflow:hidden"><span style="display:block;height:100%;width:{{ w.pct }}%;background:{{ w.fill }}"></span></span><span style="font-size:13px;font-weight:800;color:{{ w.eyebrow }}">{{ w.done }}/{{ w.count }}</span></span>
+            </button>
+          </sc-for>
+        </div>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isPlan }}" hint-placeholder-val="{{ false }}">
+      <section style="max-width:1160px;margin:0 auto;padding:clamp(36px,6vw,64px) clamp(20px,4vw,40px) 72px;display:flex;flex-direction:column;gap:36px">
+        <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px">
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <h1 style="margin:0;font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(38px,5vw,56px);line-height:1">Your 30-day plan</h1>
+            <div style="display:flex;flex-wrap:wrap;gap:6px">
+              <sc-for list="{{ skillList }}" as="k" hint-placeholder-count="5">
+                <span style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px 4px 7px;border-radius:999px;background:{{ k.tint }};color:{{ k.color }};font-size:12px;font-weight:800"><span style="font-family:'Material Symbols Rounded';font-size:15px;line-height:1;font-variation-settings:'FILL' 1">{{ k.icon }}</span>{{ k.name }}</span>
+              </sc-for>
+            </div>
+          </div>
+          <div style="flex:0 1 320px;display:flex;flex-direction:column;gap:8px">
+            <div style="display:flex;justify-content:space-between;font-size:14px;font-weight:800"><span>{{ completedCount }} of 30 days</span><span style="color:{{ t.muted }}">{{ overallPct }}%</span></div>
+            <div style="height:8px;border-radius:99px;background:{{ t.primarySoft }};overflow:hidden"><div style="height:100%;width:{{ overallPct }}%;background:{{ t.primary }};border-radius:99px"></div></div>
+          </div>
+        </div>
+        <sc-for list="{{ weeks }}" as="w" hint-placeholder-count="4">
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;padding-bottom:10px;border-bottom:1px solid {{ t.line }}">
+              <span style="font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:{{ t.primary }}">Week {{ w.n }}</span>
+              <span style="font-family:'DM Serif Display',serif;font-size:26px;line-height:1.1">{{ w.label }}</span>
+              <span style="margin-left:auto;font-size:14px;font-weight:700;color:{{ t.muted }};white-space:nowrap">{{ w.done }} of {{ w.count }} done</span>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:12px">
+              <sc-for list="{{ w.days }}" as="d" hint-placeholder-count="7">
+                <button onClick="{{ d.go }}" style="text-align:left;min-height:132px;border-radius:20px;padding:14px;background:{{ d.bg }};border:{{ d.border }};color:{{ d.ink }};display:flex;flex-direction:column;gap:8px;cursor:pointer;transition:transform .15s" style-hover="transform:translateY(-2px)">
+                  <span style="display:flex;justify-content:space-between;align-items:flex-start;width:100%">
+                    <span style="display:flex;flex-direction:column;line-height:1"><span style="font-size:11px;font-weight:800;letter-spacing:.06em;color:{{ d.sub }}">DAY</span><span style="font-family:'DM Serif Display',serif;font-size:32px">{{ d.n }}</span></span>
+                    <span style="display:inline-flex;align-items:center;gap:3px;font-size:11px;font-weight:800;color:{{ d.sub }}"><span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1;font-variation-settings:'FILL' 1">{{ d.statusIcon }}</span>{{ d.statusLabel }}</span>
+                  </span>
+                  <span style="margin-top:auto;display:flex;flex-wrap:wrap;gap:4px">
+                    <sc-for list="{{ d.skills }}" as="k" hint-placeholder-count="2">
+                      <span style="display:inline-flex;align-items:center;gap:3px;padding:3px 8px 3px 5px;border-radius:999px;background:{{ k.tagBg }};color:{{ k.tagInk }};font-size:11px;font-weight:800"><span style="font-family:'Material Symbols Rounded';font-size:13px;line-height:1;font-variation-settings:'FILL' 1">{{ k.icon }}</span>{{ k.name }}</span>
+                    </sc-for>
+                  </span>
+                </button>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isDay }}" hint-placeholder-val="{{ false }}">
+      <section style="max-width:1160px;margin:0 auto;padding:clamp(28px,5vw,48px) clamp(20px,4vw,40px) 72px;display:flex;flex-direction:column;gap:28px">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:14px;font-weight:700;color:{{ t.muted }}">
+          <button onClick="{{ goPlan }}" style="border:0;background:transparent;color:{{ t.primary }};font-size:14px;font-weight:800;padding:0;cursor:pointer">30-day plan</button>
+          <span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span><span>{{ day.weekLabel }}</span>
+          <span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span><span style="color:{{ t.ink }}">Day {{ day.n }}</span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start">
+          <div style="flex:999 1 540px;min-width:0;display:flex;flex-direction:column;gap:36px">
+            <div style="display:flex;flex-direction:column;gap:14px">
+              <div style="font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:{{ t.primary }}">{{ day.weekLabel }}</div>
+              <h1 style="margin:0;font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(48px,7vw,80px);line-height:.95">Day {{ day.n }}</h1>
+              <div style="display:flex;flex-wrap:wrap;gap:6px">
+                <sc-for list="{{ day.skills }}" as="k" hint-placeholder-count="2">
+                  <span style="display:inline-flex;align-items:center;gap:5px;padding:6px 12px 6px 9px;border-radius:999px;background:{{ k.tint }};color:{{ k.color }};font-size:14px;font-weight:800"><span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1;font-variation-settings:'FILL' 1">{{ k.icon }}</span>{{ k.name }}</span>
+                </sc-for>
+              </div>
+            </div>
+
+            <sc-for list="{{ day.sections }}" as="sec" hint-placeholder-count="2">
+              <div style="display:flex;flex-direction:column;gap:14px">
+                <div style="display:flex;align-items:center;gap:12px">
+                  <span style="width:42px;height:42px;border-radius:14px;background:{{ sec.tint }};color:{{ sec.color }};display:grid;place-items:center"><span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;font-variation-settings:'FILL' 1">{{ sec.icon }}</span></span>
+                  <h2 style="margin:0;flex:1;font-family:'DM Serif Display',serif;font-weight:400;font-size:30px;line-height:1">{{ sec.name }}</h2>
+                  <span style="font-size:14px;font-weight:800;color:{{ t.muted }}">{{ sec.doneCount }} of {{ sec.count }}</span>
+                </div>
+                <sc-for list="{{ sec.steps }}" as="s" hint-placeholder-count="3">
+                  <div style="display:grid;grid-template-columns:30px minmax(0,1fr);gap:14px;align-items:start">
+                    <span style="width:30px;height:30px;margin-top:20px;border-radius:50%;background:{{ sec.tint }};color:{{ sec.color }};display:grid;place-items:center;font-size:13px;font-weight:800">{{ s.num }}</span>
+                    <div style="background:{{ t.surface }};border:1px solid {{ t.line }};border-radius:22px;padding:18px 18px 18px 20px;display:flex;flex-direction:column;gap:12px;opacity:{{ s.opacity }};transition:opacity .2s">
+                      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px">
+                        <span style="display:inline-flex;align-items:center;gap:5px;padding:4px 10px 4px 7px;border-radius:999px;background:{{ sec.tint }};color:{{ sec.color }};font-size:12px;font-weight:800"><span style="font-family:'Material Symbols Rounded';font-size:15px;line-height:1">{{ s.icon }}</span>{{ s.typeLabel }}</span>
+                        <sc-if value="{{ s.hasTimer }}" hint-placeholder-val="{{ false }}"><span style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:999px;background:{{ t.surface2 }};font-size:12px;font-weight:800"><span style="font-family:'Material Symbols Rounded';font-size:15px;line-height:1">timer</span>{{ s.timer }} min</span></sc-if>
+                        <button onClick="{{ s.toggleDone }}" style="margin-left:auto;display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 4px 0 10px;border:0;background:transparent;color:{{ t.muted }};font-size:13px;font-weight:800;cursor:pointer">{{ s.doneLabel }}<span style="width:28px;height:28px;border-radius:9px;border:2px solid {{ sec.color }};background:{{ s.checkBg }};color:{{ t.surface }};display:grid;place-items:center;transition:background .2s"><span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;font-weight:700;opacity:{{ s.checkOpacity }}">check</span></span></button>
+                      </div>
+                      <div>
+                        <div style="font-size:18px;font-weight:800;line-height:1.3;text-wrap:pretty">{{ s.title }}</div>
+                        <div style="font-size:15px;line-height:1.55;color:{{ t.muted }};margin-top:4px;text-wrap:pretty">{{ s.instructions }}</div>
+                      </div>
+                      <sc-if value="{{ s.isAI }}" hint-placeholder-val="{{ false }}">
+                        <div style="display:flex;flex-direction:column;gap:10px">
+                          <div style="display:flex;gap:8px;align-items:flex-start;padding:11px 14px;border-radius:14px;background:{{ t.surface2 }};font-size:14px;line-height:1.45"><span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1.1;color:{{ t.primary }}">lightbulb</span><span>{{ s.aiHint }}</span></div>
+                          <div style="display:flex;flex-wrap:wrap;gap:8px">
+                            <button onClick="{{ s.copy }}" style="flex:1 1 200px;display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;border:0;border-radius:14px;background:{{ t.primary }};color:{{ t.onPrimary }};font-size:15px;font-weight:800;cursor:pointer"><span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1">{{ s.copyIcon }}</span>{{ s.copyLabel }}</button>
+                            <sc-if value="{{ s.hasImage }}" hint-placeholder-val="{{ false }}">
+                              <a href="{{ s.image }}" download="" style="flex:1 1 200px;display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;border:1.5px solid {{ t.line }};border-radius:14px;background:transparent;color:{{ t.ink }};font-size:15px;font-weight:800;cursor:pointer;text-decoration:none"><span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1">download</span>Download image</a>
+                            </sc-if>
+                            <button onClick="{{ s.togglePrompt }}" style="flex:0 1 auto;display:flex;align-items:center;justify-content:center;gap:4px;min-height:48px;padding:0 16px;border:1.5px solid {{ t.line }};border-radius:14px;background:transparent;color:{{ t.ink }};font-size:15px;font-weight:800;cursor:pointer">{{ s.toggleLabel }}<span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1">{{ s.toggleIcon }}</span></button>
+                          </div>
+                          <sc-if value="{{ s.promptOpen }}" hint-placeholder-val="{{ false }}">
+                            <sc-if value="{{ s.hasImage }}" hint-placeholder-val="{{ false }}">
+                              <img src="{{ s.image }}" onClick="{{ s.openLightbox }}" alt="Chart for this prompt" style="max-width:100%;max-height:320px;border-radius:14px;border:1px solid {{ t.line }};cursor:zoom-in;object-fit:contain">
+                            </sc-if>
+                            <div style="max-height:280px;overflow:auto;padding:14px 16px;border-radius:14px;border:1px dashed {{ t.line }};background:{{ t.bg }};font-size:14px;line-height:1.6;white-space:pre-wrap">{{ s.prompt }}</div>
+                          </sc-if>
+                        </div>
+                      </sc-if>
+                      <sc-if value="{{ s.hasActions }}" hint-placeholder-val="{{ true }}">
+                        <div style="display:flex;flex-wrap:wrap;gap:8px">
+                          <sc-if value="{{ s.hasUrl }}" hint-placeholder-val="{{ true }}">
+                            <a href="{{ s.url }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;min-height:42px;padding:0 16px;border-radius:12px;border:1.5px solid {{ t.line }};color:{{ t.ink }};font-size:14px;font-weight:800;text-decoration:none" style-hover="border-color:{{ t.primary }}">{{ s.openLabel }}<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">open_in_new</span></a>
+                          </sc-if>
+                          <sc-if value="{{ s.hasTimer }}" hint-placeholder-val="{{ false }}">
+                            <button onClick="{{ s.startTimer }}" style="display:inline-flex;align-items:center;gap:6px;min-height:42px;padding:0 16px;border-radius:12px;border:0;background:{{ t.primarySoft }};color:{{ t.primary }};font-size:14px;font-weight:800;cursor:pointer"><span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1;font-variation-settings:'FILL' 1">favorite</span>Start timer</button>
+                          </sc-if>
+                        </div>
+                      </sc-if>
+                    </div>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-for>
+
+            <sc-if value="{{ day.allDone }}" hint-placeholder-val="{{ false }}">
+              <div style="position:relative;overflow:hidden;border-radius:28px;background:{{ t.primarySoft }};padding:36px 24px 28px;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center">
+                <span style="position:absolute;top:22px;left:12%;width:12px;height:12px;border-radius:50%;background:#B892E6"></span>
+                <span style="position:absolute;top:44px;right:14%;width:10px;height:10px;border-radius:3px;transform:rotate(30deg);background:#F2A07C"></span>
+                <span style="position:absolute;bottom:40px;left:8%;width:8px;height:8px;border-radius:50%;background:#62C2A6"></span>
+                <span style="position:absolute;top:18px;right:30%;width:8px;height:8px;border-radius:50%;background:#E8C463"></span>
+                <span style="position:absolute;bottom:56px;right:9%;width:12px;height:12px;border-radius:50%;background:#F58AB2"></span>
+                <span style="width:68px;height:68px;border-radius:50%;background:{{ t.surface }};color:{{ t.primary }};display:grid;place-items:center"><span style="font-family:'Material Symbols Rounded';font-size:36px;line-height:1;font-variation-settings:'FILL' 1">celebration</span></span>
+                <div style="font-family:'DM Serif Display',serif;font-size:34px;line-height:1.1">Every step done!</div>
+                <div style="font-size:16px;line-height:1.5;color:{{ t.muted }};max-width:380px">Lovely work today. Mark Day {{ day.n }} complete to add it to your progress.</div>
+                <button onClick="{{ day.markComplete }}" style="margin-top:6px;min-height:52px;padding:0 28px;border:0;border-radius:16px;background:{{ t.primary }};color:{{ t.onPrimary }};font-size:16px;font-weight:800;display:flex;align-items:center;gap:8px;cursor:pointer"><span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;font-variation-settings:'FILL' 1">favorite</span>{{ day.completeLabel }}</button>
+              </div>
+            </sc-if>
+
+            <div style="position:relative;overflow:hidden;border-radius:26px;background:{{ t.band }};border:1.5px dashed {{ t.primary }};padding:26px 24px;display:flex;gap:16px;align-items:flex-start">
+              <span style="position:absolute;right:18px;top:-6px;font-family:'Material Symbols Rounded';font-size:64px;line-height:1;color:{{ t.primarySoft }};font-variation-settings:'FILL' 1;transform:rotate(14deg)">favorite</span>
+              <span style="position:absolute;right:78px;bottom:10px;font-family:'Material Symbols Rounded';font-size:26px;line-height:1;color:{{ t.primarySoft }};font-variation-settings:'FILL' 1;transform:rotate(-12deg)">favorite</span>
+              <span style="position:relative;width:48px;height:48px;flex:none;border-radius:50%;background:{{ t.primary }};color:{{ t.onPrimary }};display:grid;place-items:center"><span style="font-family:'Material Symbols Rounded';font-size:26px;line-height:1;font-variation-settings:'FILL' 1">favorite</span></span>
+              <div style="position:relative;display:flex;flex-direction:column;gap:6px;min-width:0">
+                <div style="font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:{{ t.primary }}">A note for Shodi · Day {{ day.n }}</div>
+                <div style="font-family:'DM Serif Display',serif;font-size:clamp(22px,2.6vw,28px);line-height:1.25;text-wrap:pretty">{{ day.cheer }}</div>
+              </div>
+            </div>
+
+            <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-top:8px;border-top:1px solid {{ t.line }}">
+              <button onClick="{{ day.goPrev }}" style="min-height:52px;padding:0 20px 0 14px;border-radius:16px;border:1.5px solid {{ t.line }};background:{{ t.surface }};color:{{ t.ink }};font-size:15px;font-weight:800;display:flex;align-items:center;gap:6px;cursor:pointer;opacity:{{ day.prevOpacity }}"><span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1">arrow_back</span>Previous day</button>
+              <button onClick="{{ day.goNext }}" style="min-height:52px;padding:0 14px 0 20px;border-radius:16px;border:1.5px solid {{ t.line }};background:{{ t.surface }};color:{{ t.ink }};font-size:15px;font-weight:800;display:flex;align-items:center;gap:6px;cursor:pointer;opacity:{{ day.nextOpacity }}">Next day<span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1">arrow_forward</span></button>
+            </div>
+          </div>
+
+          <aside style="flex:1 1 260px;position:sticky;top:92px;display:flex;flex-direction:column;gap:14px">
+            <div style="background:{{ t.surface }};border:1px solid {{ t.line }};border-radius:24px;padding:22px;display:flex;flex-direction:column;gap:18px">
+              <div style="display:flex;align-items:center;gap:16px">
+                <div style="width:84px;height:84px;flex:none;border-radius:50%;background:{{ day.ringBg }};display:grid;place-items:center">
+                  <div style="width:68px;height:68px;border-radius:50%;background:{{ t.surface }};display:grid;place-items:center;font-family:'DM Serif Display',serif;font-size:20px;white-space:nowrap">{{ day.pct }}%</div>
+                </div>
+                <div><div style="font-size:17px;font-weight:800">{{ day.doneCount }} of {{ day.total }} steps done</div><div style="font-size:14px;color:{{ t.muted }};margin-top:2px">{{ day.statusText }}</div></div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:10px">
+                <sc-for list="{{ day.sections }}" as="sec" hint-placeholder-count="2">
+                  <div style="display:flex;align-items:center;gap:10px;font-size:14px;font-weight:700">
+                    <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1;color:{{ sec.color }};font-variation-settings:'FILL' 1">{{ sec.icon }}</span>
+                    <span style="flex:1">{{ sec.name }}</span>
+                    <span style="width:70px;height:6px;border-radius:99px;background:{{ sec.tint }};overflow:hidden"><span style="display:block;height:100%;width:{{ sec.pct }}%;background:{{ sec.color }}"></span></span>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isAbout }}" hint-placeholder-val="{{ false }}">
+      <section style="max-width:760px;margin:0 auto;padding:clamp(40px,6vw,72px) clamp(20px,4vw,40px) 80px;display:flex;flex-direction:column;gap:24px">
+        <h1 style="margin:0;font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(38px,5vw,56px);line-height:1">About this plan</h1>
+        <p style="margin:0;font-size:18px;line-height:1.6;color:{{ t.muted }}">This site doesn’t host lessons. It tells you what to study each day and links you to good free material.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px">
+          <div style="background:{{ t.surface }};border:1px solid {{ t.line }};border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:10px">
+            <span style="width:44px;height:44px;border-radius:14px;background:{{ sk.Writing.tint }};color:{{ sk.Writing.color }};display:grid;place-items:center"><span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1">school</span></span>
+            <div style="font-size:18px;font-weight:800">IELTS Liz</div>
+            <div style="font-size:15px;line-height:1.55;color:{{ t.muted }}">Most lessons, practice questions and model answers come from this free teaching site.</div>
+            <a href="https://ieltsliz.com/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:4px;font-size:15px;font-weight:800;text-decoration:none;color:{{ t.primary }}">ieltsliz.com<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">open_in_new</span></a>
+          </div>
+          <div style="background:{{ t.surface }};border:1px solid {{ t.line }};border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:10px">
+            <span style="width:44px;height:44px;border-radius:14px;background:{{ sk.Reading.tint }};color:{{ sk.Reading.color }};display:grid;place-items:center"><span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1">fact_check</span></span>
+            <div style="font-size:18px;font-weight:800">Official IELTS practice tests</div>
+            <div style="font-size:15px;line-height:1.55;color:{{ t.muted }}">Full timed tests in weeks 3 and 4 use the free official samples.</div>
+            <a href="https://ielts.org/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:4px;font-size:15px;font-weight:800;text-decoration:none;color:{{ t.primary }}">ielts.org<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">open_in_new</span></a>
+          </div>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;padding:18px 20px;border-radius:20px;background:{{ t.primarySoft }};font-size:15px;line-height:1.55"><span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1.1;color:{{ t.primary }};font-variation-settings:'FILL' 1">favorite</span><span><b>Always free.</b> This is an independent study companion. It is not affiliated with or endorsed by IELTS, the British Council, IDP or Cambridge.</span></div>
+        <div style="background:{{ t.surface }};border:1px solid {{ t.line }};border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:14px">
+          <div><div style="font-size:18px;font-weight:800">Reset my progress</div><div style="font-size:15px;line-height:1.55;color:{{ t.muted }}">Clears checked steps and completed days on this device.</div></div>
+          <sc-if value="{{ confirmClosed }}" hint-placeholder-val="{{ true }}">
+            <button onClick="{{ openConfirm }}" style="align-self:flex-start;min-height:44px;padding:0 18px;border-radius:13px;border:1.5px solid {{ t.danger }};background:transparent;color:{{ t.danger }};font-size:15px;font-weight:800;display:flex;align-items:center;gap:6px;cursor:pointer"><span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">restart_alt</span>Reset progress</button>
+          </sc-if>
+          <sc-if value="{{ confirmOpen }}" hint-placeholder-val="{{ false }}">
+            <div style="border-radius:16px;background:{{ t.surface2 }};border:1.5px solid {{ t.danger }};padding:16px;display:flex;flex-wrap:wrap;align-items:center;gap:14px">
+              <div style="flex:1 1 260px;display:flex;gap:8px;align-items:flex-start;font-size:15px;line-height:1.5"><span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1.1;color:{{ t.danger }}">warning</span><span><b>Reset all 30 days?</b> Your {{ completedCount }} completed days and all ticks will be cleared. This can’t be undone.</span></div>
+              <div style="display:flex;gap:8px">
+                <button onClick="{{ closeConfirm }}" style="min-height:44px;padding:0 18px;border-radius:12px;border:1.5px solid {{ t.line }};background:{{ t.surface }};color:{{ t.ink }};font-size:14px;font-weight:800;cursor:pointer">Cancel</button>
+                <button onClick="{{ resetAll }}" style="min-height:44px;padding:0 18px;border-radius:12px;border:0;background:{{ t.danger }};color:{{ t.onPrimary }};font-size:14px;font-weight:800;cursor:pointer">Yes, reset</button>
+              </div>
+            </div>
+          </sc-if>
+        </div>
+      </section>
+    </sc-if>
+  </main>
+
+  <footer style="border-top:1px solid {{ t.line }};background:{{ t.band }}">
+    <div style="max-width:1160px;margin:0 auto;padding:28px clamp(20px,4vw,40px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;font-size:14px;color:{{ t.muted }}">
+      <span style="display:inline-flex;align-items:center;gap:6px">30 Days IELTS Practice for Shodi<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1;color:{{ t.primary }};font-variation-settings:'FILL' 1">favorite</span>Free, and not affiliated with IELTS.</span>
+      <span style="display:flex;gap:18px"><button onClick="{{ goPlan }}" style="border:0;background:transparent;color:{{ t.muted }};font-size:14px;font-weight:700;cursor:pointer;padding:0">30-day plan</button><button onClick="{{ goAbout }}" style="border:0;background:transparent;color:{{ t.muted }};font-size:14px;font-weight:700;cursor:pointer;padding:0">About &amp; resources</button></span>
+    </div>
+  </footer>
+
+  <sc-if value="{{ showMini }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;right:clamp(12px,3vw,28px);bottom:clamp(12px,3vw,28px);z-index:30;display:flex;align-items:center;gap:12px;padding:8px 8px 8px 16px;border-radius:20px;background:{{ t.pill }};color:{{ t.onPill }};box-shadow:0 14px 36px rgba(120,40,80,.3);max-width:calc(100vw - 24px)">
+      <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#F7A8C6">{{ timer.icon }}</span>
+      <div style="display:flex;flex-direction:column;min-width:0">
+        <span style="font-size:12px;font-weight:700;opacity:.75;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:180px">{{ timer.label }}</span>
+        <span style="font-size:22px;font-weight:800;font-variant-numeric:tabular-nums;line-height:1.1">{{ timer.clock }}</span>
+      </div>
+      <button onClick="{{ timer.toggle }}" aria-label="Pause or resume" style="width:44px;height:44px;border-radius:14px;border:0;background:rgba(255,255,255,.14);color:inherit;display:grid;place-items:center;cursor:pointer"><span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;font-variation-settings:'FILL' 1">{{ timer.toggleIcon }}</span></button>
+      <button onClick="{{ timer.expand }}" aria-label="Expand timer" style="width:44px;height:44px;border-radius:14px;border:0;background:#F7A8C6;color:#3B2531;display:grid;place-items:center;cursor:pointer"><span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1">open_in_full</span></button>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ showFull }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;inset:0;z-index:40;background:{{ timer.overlayBg }};display:flex;flex-direction:column;padding:20px clamp(20px,4vw,40px);box-sizing:border-box;overflow:auto">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+        <span style="display:inline-flex;align-items:center;gap:5px;padding:6px 12px 6px 9px;border-radius:999px;background:{{ timer.tint }};color:{{ timer.color }};font-size:13px;font-weight:800"><span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1;font-variation-settings:'FILL' 1">{{ timer.skillIcon }}</span>{{ timer.skill }} · Day {{ timer.day }}</span>
+        <div style="display:flex;gap:8px">
+          <button onClick="{{ timer.minimise }}" style="min-height:44px;padding:0 14px;border-radius:14px;border:1px solid {{ t.line }};background:{{ t.surface }};color:{{ t.ink }};font-size:14px;font-weight:800;display:flex;align-items:center;gap:6px;cursor:pointer"><span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1">close_fullscreen</span>Minimise</button>
+          <button onClick="{{ timer.close }}" aria-label="Close timer" style="width:44px;height:44px;border-radius:14px;border:1px solid {{ t.line }};background:{{ t.surface }};color:{{ t.ink }};display:grid;place-items:center;cursor:pointer"><span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1">close</span></button>
+        </div>
+      </div>
+      <sc-if value="{{ timer.running }}" hint-placeholder-val="{{ true }}">
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;padding:24px 0">
+          <div style="font-size:18px;font-weight:700;color:{{ t.muted }};text-align:center">{{ timer.label }}</div>
+          <div style="width:min(320px,78vw);aspect-ratio:1;border-radius:50%;background:{{ timer.ringBg }};display:grid;place-items:center">
+            <div style="width:89%;aspect-ratio:1;border-radius:50%;background:{{ t.bg }};display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px">
+              <div style="font-size:clamp(56px,10vw,80px);font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.02em;line-height:1">{{ timer.clock }}</div>
+              <div style="font-size:15px;font-weight:700;color:{{ t.muted }}">of {{ timer.totalClock }} · {{ timer.status }}</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:22px">
+            <button onClick="{{ timer.reset }}" aria-label="Reset" style="width:60px;height:60px;border-radius:50%;border:1.5px solid {{ t.line }};background:{{ t.surface }};color:{{ t.ink }};display:grid;place-items:center;cursor:pointer"><span style="font-family:'Material Symbols Rounded';font-size:26px;line-height:1">restart_alt</span></button>
+            <button onClick="{{ timer.toggle }}" aria-label="Pause or resume" style="width:88px;height:88px;border-radius:50%;border:0;background:{{ t.primary }};color:{{ t.onPrimary }};display:grid;place-items:center;cursor:pointer;box-shadow:0 12px 28px {{ t.glow }}"><span style="font-family:'Material Symbols Rounded';font-size:40px;line-height:1;font-variation-settings:'FILL' 1">{{ timer.toggleIcon }}</span></button>
+            <button onClick="{{ timer.minimise }}" aria-label="Minimise" style="width:60px;height:60px;border-radius:50%;border:1.5px solid {{ t.line }};background:{{ t.surface }};color:{{ t.ink }};display:grid;place-items:center;cursor:pointer"><span style="font-family:'Material Symbols Rounded';font-size:26px;line-height:1">picture_in_picture_alt</span></button>
+          </div>
+          <div style="font-size:15px;line-height:1.5;color:{{ t.muted }};text-align:center;max-width:320px">Minimise to keep it floating on the page while you work.</div>
+        </div>
+      </sc-if>
+      <sc-if value="{{ timer.up }}" hint-placeholder-val="{{ false }}">
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center;padding:24px 0">
+          <span style="width:100px;height:100px;border-radius:50%;background:{{ t.primary }};color:{{ t.onPrimary }};display:grid;place-items:center;box-shadow:0 0 0 16px {{ t.glow }}"><span style="font-family:'Material Symbols Rounded';font-size:50px;line-height:1;font-variation-settings:'FILL' 1">alarm</span></span>
+          <div style="margin-top:14px;font-family:'DM Serif Display',serif;font-size:clamp(48px,7vw,68px);line-height:1">Time’s up</div>
+          <div style="font-size:17px;line-height:1.5;color:{{ t.muted }};max-width:380px">Pens down. Check your answers, then mark this step done.</div>
+          <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:10px">
+            <button onClick="{{ timer.markDone }}" style="min-height:54px;padding:0 24px;border:0;border-radius:16px;background:{{ t.primary }};color:{{ t.onPrimary }};font-size:16px;font-weight:800;display:flex;align-items:center;gap:8px;cursor:pointer"><span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;font-variation-settings:'FILL' 1">favorite</span>Mark step done</button>
+            <button onClick="{{ timer.addFive }}" style="min-height:54px;padding:0 22px;border-radius:16px;border:1.5px solid {{ t.line }};background:{{ t.surface }};color:{{ t.ink }};font-size:16px;font-weight:800;cursor:pointer">+5 minutes</button>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ lightboxImage }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeLightbox }}" style="position:fixed;inset:0;z-index:50;background:rgba(20,10,15,.86);display:flex;align-items:center;justify-content:center;padding:clamp(20px,5vw,60px);box-sizing:border-box;cursor:zoom-out">
+      <img src="{{ lightboxImage }}" style="max-width:100%;max-height:100%;border-radius:16px;box-shadow:0 24px 60px rgba(0,0,0,.5)">
+      <button onClick="{{ closeLightbox }}" aria-label="Close image" style="position:fixed;top:clamp(12px,3vw,28px);right:clamp(12px,3vw,28px);width:44px;height:44px;border-radius:14px;border:0;background:rgba(255,255,255,.16);color:#fff;display:grid;place-items:center;cursor:pointer"><span style="font-family:'Material Symbols Rounded';font-size:24px;line-height:1">close</span></button>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;startPage&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;plan&quot;,&quot;day&quot;,&quot;about&quot;],&quot;default&quot;:&quot;home&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;theme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;light&quot;,&quot;dark&quot;],&quot;default&quot;:&quot;light&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;fastTimer&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Demo&quot;}}">
+const SKILLS = {
+  Listening: { icon: 'headphones', light: ['#8E5FD0', '#F1E8FB'], dark: ['#C6A4F2', '#3A2C4E'] },
+  Reading:   { icon: 'menu_book',  light: ['#C9653B', '#FDEDE4'], dark: ['#F4A784', '#4A2E24'] },
+  Writing:   { icon: 'edit',       light: ['#C8437A', '#FCE4EE'], dark: ['#F58AB2', '#4C2234'] },
+  Speaking:  { icon: 'mic',        light: ['#2F8C74', '#E0F3EC'], dark: ['#79D1B8', '#1F3D35'] },
+  Review:    { icon: 'refresh',    light: ['#A67C10', '#FBF1D6'], dark: ['#E8C463', '#463A1C'] }
+};
+const TYPES = {
+  overview: { icon: 'info', label: 'Exam overview', open: 'Open overview' },
+  lesson:   { icon: 'school', label: 'Lesson', open: 'Open lesson' },
+  practice: { icon: 'edit_note', label: 'Practice', open: 'Open practice' },
+  sample:   { icon: 'workspace_premium', label: 'Sample answer', open: 'Open sample' },
+  ai:       { icon: 'auto_awesome', label: 'AI practice', open: 'Open' },
+  review:   { icon: 'replay', label: 'Review', open: 'Open' }
+};
+const THEMES = {
+  light: { bg: '#FFF5F8', headerBg: 'rgba(255,245,248,.86)', band: '#FFEEF4', surface: '#FFFFFF', surface2: '#FFEDF3', line: '#F3D6E1', ink: '#3B2531', muted: '#7E5E6C', primary: '#C8437A', onPrimary: '#FFFFFF', primarySoft: '#FCE1EC', glow: 'rgba(200,67,122,.22)', shadow: 'rgba(200,67,122,.12)', pill: '#3B2531', onPill: '#FFFFFF', danger: '#B0305F', upBg: '#F9D3E2' },
+  dark:  { bg: '#1E1318', headerBg: 'rgba(30,19,24,.86)', band: '#25181E', surface: '#2A1A22', surface2: '#36222C', line: '#47323D', ink: '#FBE9F0', muted: '#C9A9B7', primary: '#F08CB4', onPrimary: '#2A1018', primarySoft: '#4A2737', glow: 'rgba(240,140,180,.22)', shadow: 'rgba(0,0,0,.35)', pill: '#FBE9F0', onPill: '#2A1018', danger: '#F27A9E', upBg: '#4A2737' }
+};
+const WEEKS = [[1, 'Foundations', 1, 7], [2, 'Core question types', 8, 14], [3, 'Full sections (soft timer)', 15, 21], [4, 'Exam timing and mock tests', 22, 30]];
+const CHEERS = [
+  'You started, and that’s the hardest part. So proud of you!',
+  'One more day of practice, one step closer. You’ve got this!',
+  'Every question you try makes the real test feel smaller.',
+  'Mistakes today mean fewer mistakes on exam day. Keep going!',
+  'Look how far you’ve come already. Be gentle with yourself tonight.',
+  'Your future self is cheering for you right now.',
+  'Slow progress is still progress. Rest well, you earned it.',
+  'You showed up again today. That’s what winners do.',
+  'Your English is growing a little every single day.',
+  'Breathe, smile, and be proud of today’s work.'
+];
+const SPECIAL = {
+  7: 'A whole week done! Take a moment to feel proud of yourself.',
+  14: 'Two weeks in and still going strong. You’re amazing!',
+  21: 'Three weeks! The full sections can’t scare you now.',
+  28: 'Mock exam day. Remember: you’ve practised for this. Trust yourself!',
+  29: 'Last mock done soon. You’re so ready, Shodi!',
+  30: 'Day 30! You did every single day. Go get that band score!'
+};
+const fmt = s => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
+const weekOf = n => WEEKS.find(w => n >= w[2] && n <= w[3]);
+
+const STORAGE_KEY = 'ielts30-shodi-progress';
+function loadSaved() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return null;
+    const p = JSON.parse(raw);
+    const done = {};
+    Object.keys(p.done || {}).forEach(k => { done[k] = new Set(p.done[k]); });
+    return { theme: p.theme || null, day: p.day || 1, done, completed: new Set(p.completed || []) };
+  } catch (e) { return null; }
+}
+
+class Component extends DCLogic {
+  state = (() => {
+    const saved = loadSaved();
+    return {
+      page: null,
+      day: saved ? saved.day : 1,
+      theme: saved ? saved.theme : null,
+      done: saved ? saved.done : {},
+      completed: saved ? saved.completed : new Set(),
+      open: {}, copied: null, confirm: false, timer: null, lightbox: null,
+      plan: null, prompts: null, dataReady: false, dataError: null
+    };
+  })();
+
+  componentDidMount() {
+    this.iv = setInterval(() => {
+      const tm = this.state.timer;
+      if (tm && tm.running && tm.left > 0) this.setState({ timer: { ...tm, left: Math.max(0, tm.left - (this.props.fastTimer ? 30 : 1)) } });
+    }, 1000);
+    this.loadData();
+  }
+  componentWillUnmount() { clearInterval(this.iv); }
+
+  loadData() {
+    Promise.all([fetch('./data/plan.json'), fetch('./data/prompts.json')])
+      .then(([planRes, promptsRes]) => {
+        if (!planRes.ok || !promptsRes.ok) {
+          throw new Error(`HTTP ${planRes.status}/${promptsRes.status}`);
+        }
+        return Promise.all([planRes.json(), promptsRes.json()]);
+      })
+      .then(([plan, prompts]) => this.setState({ plan, prompts, dataReady: true, dataError: null }))
+      .catch(e => this.setState({ dataError: (e && e.message) || String(e) }));
+  }
+
+  persist() {
+    try {
+      const doneObj = {};
+      Object.keys(this.state.done).forEach(k => { doneObj[k] = [...this.state.done[k]]; });
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({
+        theme: this.state.theme, day: this.state.day,
+        done: doneObj, completed: [...this.state.completed]
+      }));
+    } catch (e) {}
+  }
+
+  go(page, day) {
+    this.setState(s => ({ page, day: day ?? s.day, confirm: false }));
+    this.persist();
+    try { window.scrollTo({ top: 0 }); } catch (e) {}
+  }
+  nextDay() { for (let i = 1; i <= 30; i++) if (!this.state.completed.has(i)) return i; return 30; }
+  skillsOf(n) {
+    const rows = (this.state.plan && this.state.plan[n]) || [];
+    const seen = [];
+    rows.forEach(r => { if (!seen.includes(r.skill)) seen.push(r.skill); });
+    return seen;
+  }
+  toggleStep(dn, i) {
+    this.setState(s => { const d = new Set(s.done[dn] || []); d.has(i) ? d.delete(i) : d.add(i); return { done: { ...s.done, [dn]: d } }; });
+    this.persist();
+  }
+
+  renderVals() {
+    const mode = this.state.theme ?? (this.props.theme === 'dark' ? 'dark' : 'light');
+    const t = THEMES[mode];
+    const page = this.state.page ?? this.props.startPage ?? 'home';
+    const sk = {}; Object.keys(SKILLS).forEach(k => { const [color, tint] = SKILLS[k][mode]; sk[k] = { name: k, color, tint, icon: SKILLS[k].icon }; });
+    const nav = [['home', 'Home'], ['plan', '30-day plan'], ['day', 'Today'], ['about', 'About']];
+
+    const base = {
+      t, sk, themeIcon: mode === 'dark' ? 'light_mode' : 'dark_mode',
+      toggleTheme: () => { this.setState({ theme: mode === 'dark' ? 'light' : 'dark' }); this.persist(); },
+      navItems: nav.map(([p, label]) => ({
+        label, bg: page === p ? t.primarySoft : 'transparent', color: page === p ? t.primary : t.ink,
+        go: () => p === 'day' ? this.go('day', this.nextDay()) : this.go(p)
+      })),
+      goHome: () => this.go('home'), goPlan: () => this.go('plan'), goAbout: () => this.go('about'),
+      dataReady: this.state.dataReady, dataError: this.state.dataError,
+      lightboxImage: this.state.lightbox, closeLightbox: () => this.setState({ lightbox: null }),
+      isHome: false, isPlan: false, isDay: false, isAbout: false
+    };
+    if (!this.state.dataReady) return base;
+
+    const plan = this.state.plan, prompts = this.state.prompts;
+    const completed = this.state.completed;
+    const next = this.nextDay();
+    const dayStatus = n => completed.has(n) ? 'done' : ((this.state.done[n] && this.state.done[n].size) || n === next ? 'progress' : 'todo');
+
+    const weeks = WEEKS.map(([n, label, a, b], wi) => {
+      const days = [];
+      for (let d = a; d <= b; d++) {
+        const st = dayStatus(d), mock = d === 28 || d === 29;
+        let bg = t.surface, border = `1px solid ${t.line}`, ink = t.ink, sub = t.muted;
+        if (st === 'done') { bg = t.primarySoft; border = `1px solid ${t.primarySoft}`; sub = t.primary; }
+        if (st === 'progress') { border = `2px solid ${t.primary}`; sub = t.primary; }
+        if (mock) { bg = mode === 'dark' ? 'linear-gradient(150deg,#B04A78,#7A55A8)' : 'linear-gradient(150deg,#E05F94,#A97FD8)'; border = '1px solid transparent'; ink = '#FFFFFF'; sub = '#FFFFFF'; }
+        days.push({
+          n: d, bg, border, ink, sub,
+          statusIcon: mock ? 'stars' : st === 'done' ? 'check_circle' : st === 'progress' ? 'pending' : 'radio_button_unchecked',
+          statusLabel: mock ? 'Mock exam' : st === 'done' ? 'Done' : st === 'progress' ? 'In progress' : '',
+          skills: this.skillsOf(d).map(k => ({ ...sk[k], tagBg: mock ? 'rgba(255,255,255,.22)' : sk[k].tint, tagInk: mock ? '#FFFFFF' : sk[k].color })),
+          go: () => this.go('day', d)
+        });
+      }
+      const done = days.filter(x => completed.has(x.n)).length;
+      const accent = [sk.Listening, sk.Reading, sk.Writing, sk.Speaking][wi];
+      return { n, label, days, range: `${a}–${b}`, count: days.length, done, pct: Math.round(done / days.length * 100), cardBg: t.surface, cardInk: t.ink, eyebrow: accent.color, track: accent.tint, fill: accent.color };
+    });
+
+    const dn = this.state.day, rows = plan[dn] || [];
+    const doneSet = this.state.done[dn] || new Set();
+    const groups = {};
+    rows.forEach((r, i) => (groups[r.skill] = groups[r.skill] || []).push({ r, i }));
+    const sections = Object.keys(groups).map(name => {
+      const s0 = sk[name];
+      const steps = groups[name].map(({ r, i }, n) => {
+        const ty = TYPES[r.type] || TYPES.practice, isDone = doneSet.has(i), key = `${dn}-${i}`, open = !!this.state.open[key];
+        const promptEntry = prompts[r.promptId];
+        const promptText = promptEntry ? promptEntry.text : '';
+        const image = promptEntry ? promptEntry.image : null;
+        const openUrl = (r.type === 'lesson' || r.type === 'overview') ? (r.videoUrl || r.url) : r.url;
+        return {
+          num: n + 1, title: r.title, instructions: r.instructions, icon: ty.icon, typeLabel: ty.label,
+          hasTimer: !!r.timer, timer: r.timer, url: openUrl, hasUrl: !!openUrl, openLabel: ty.open, hasActions: !!openUrl || !!r.timer,
+          isAI: r.type === 'ai', prompt: promptText, promptOpen: open,
+          hasImage: !!image, image,
+          aiHint: image ? 'Copy the prompt, download the image, and attach both in your chatbot.' : 'Paste into ChatGPT, Claude or Gemini, answer, get your band, then rewrite.',
+          toggleLabel: open ? 'Hide prompt' : 'Show prompt', toggleIcon: open ? 'expand_less' : 'expand_more',
+          copyLabel: this.state.copied === key ? 'Copied!' : 'Copy prompt', copyIcon: this.state.copied === key ? 'check' : 'content_copy',
+          checkBg: isDone ? s0.color : 'transparent', checkOpacity: isDone ? 1 : 0, opacity: isDone ? 0.7 : 1, doneLabel: isDone ? 'Done' : 'Mark done',
+          toggleDone: () => this.toggleStep(dn, i),
+          togglePrompt: () => this.setState(s => ({ open: { ...s.open, [key]: !s.open[key] } })),
+          copy: () => { try { navigator.clipboard.writeText(promptText); } catch (e) {} this.setState({ copied: key }); setTimeout(() => this.setState({ copied: null }), 1600); },
+          openLightbox: () => this.setState({ lightbox: image }),
+          startTimer: () => this.setState({ timer: { day: dn, idx: i, label: r.title, skill: name, total: r.timer * 60, left: r.timer * 60, running: true, full: true } })
+        };
+      });
+      const dc = groups[name].filter(g => doneSet.has(g.i)).length;
+      return { ...s0, steps, count: steps.length, doneCount: dc, pct: Math.round(dc / steps.length * 100) };
+    });
+    const total = rows.length, doneCount = rows.filter((_, i) => doneSet.has(i)).length, pct = total ? Math.round(doneCount / total * 100) : 0;
+    const isComplete = completed.has(dn);
+    const wk = weekOf(dn);
+    const day = {
+      n: dn, cheer: SPECIAL[dn] || CHEERS[(dn - 1) % CHEERS.length], weekLabel: wk ? `Week ${wk[0]} · ${wk[1]}` : '', skills: sections.map(s => ({ name: s.name, color: s.color, tint: s.tint, icon: s.icon })),
+      sections, total, doneCount, pct,
+      ringBg: `conic-gradient(${t.primary} ${pct}%, ${t.primarySoft} 0)`,
+      statusText: isComplete ? 'Day complete' : (total > 0 && doneCount === total) ? 'Ready to mark complete' : 'Tick each step as you go',
+      allDone: total > 0 && doneCount === total,
+      completeLabel: isComplete ? 'Day complete' : 'Mark day complete', completeIcon: isComplete ? 'verified' : 'task_alt',
+      markComplete: () => { this.setState(s => ({ completed: new Set([...s.completed, dn]) })); this.persist(); },
+      goPrev: () => dn > 1 && this.go('day', dn - 1), goNext: () => dn < 30 && this.go('day', dn + 1),
+      prevOpacity: dn === 1 ? 0.4 : 1, nextOpacity: dn === 30 ? 0.4 : 1
+    };
+
+    const nextRows = plan[next] || [];
+    const tm = this.state.timer;
+    let timer = {};
+    if (tm) {
+      const s0 = sk[tm.skill], tp = Math.round(tm.left / tm.total * 1000) / 10;
+      timer = {
+        label: tm.label, skill: tm.skill, day: tm.day, color: s0.color, tint: s0.tint, skillIcon: s0.icon,
+        icon: tm.left === 0 ? 'alarm' : 'timer', clock: fmt(tm.left), totalClock: fmt(tm.total),
+        status: tm.running ? 'running' : 'paused', running: tm.left > 0, up: tm.left === 0,
+        overlayBg: tm.left === 0 ? t.upBg : t.bg,
+        ringBg: `conic-gradient(${t.primary} ${tp}%, ${t.primarySoft} 0)`,
+        toggleIcon: tm.running ? 'pause' : 'play_arrow',
+        toggle: () => this.setState(s => ({ timer: { ...s.timer, running: !s.timer.running } })),
+        reset: () => this.setState(s => ({ timer: { ...s.timer, left: s.timer.total, running: false } })),
+        minimise: () => this.setState(s => ({ timer: { ...s.timer, full: false } })),
+        expand: () => this.setState(s => ({ timer: { ...s.timer, full: true } })),
+        close: () => this.setState({ timer: null }),
+        addFive: () => this.setState(s => ({ timer: { ...s.timer, left: 300, total: 300, running: true } })),
+        markDone: () => { const st = this.state.done[tm.day] || new Set(); if (!st.has(tm.idx)) this.toggleStep(tm.day, tm.idx); this.setState({ timer: null }); }
+      };
+    }
+
+    return {
+      ...base,
+      isHome: page === 'home', isPlan: page === 'plan', isDay: page === 'day', isAbout: page === 'about',
+      goNext: () => this.go('day', next),
+      ctaLabel: completed.size === 0 ? 'Start Day 1' : `Continue Day ${next}`,
+      completedCount: completed.size, overallPct: Math.round(completed.size / 30 * 100),
+      nextDay: next, nextSkills: this.skillsOf(next).map(k => sk[k]),
+      nextSteps: nextRows.slice(0, 4).map(r => ({ title: r.title, typeLabel: (TYPES[r.type] || TYPES.practice).label, icon: (TYPES[r.type] || TYPES.practice).icon, color: sk[r.skill].color, tint: sk[r.skill].tint })),
+      weeks, skillList: Object.values(sk), day,
+      timer, showFull: !!tm && tm.full, showMini: !!tm && !tm.full,
+      confirmOpen: this.state.confirm, confirmClosed: !this.state.confirm,
+      openConfirm: () => this.setState({ confirm: true }), closeConfirm: () => this.setState({ confirm: false }),
+      resetAll: () => { this.setState({ completed: new Set(), done: {}, confirm: false, timer: null }); this.persist(); }
+    };
+  }
+}
+</script>
+</body>
+</html>
